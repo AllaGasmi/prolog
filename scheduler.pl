@@ -7,7 +7,7 @@
 :- consult(constraints).
 
 % ============================================================
-% POINT D'ENTRÉE PRINCIPAL
+% POINT D ENTRÉE PRINCIPAL
 % generate_schedule(-Schedule)
 % Schedule = liste de session(Cours, IndexSession, Salle, Créneau)
 % ============================================================
@@ -30,7 +30,7 @@ assign_all([C|Rest], Acc, Final) :-
     assign_all(Rest, Acc2, Final).
 
 % ============================================================
-% ASSIGNATION DES SESSIONS D'UN COURS
+% ASSIGNATION DES SESSIONS D UN COURS
 % assign_sessions(+Course, +K, +Acc, -NewAcc)
 % K = nombre de sessions restantes à placer
 % ============================================================
