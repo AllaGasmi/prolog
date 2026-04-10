@@ -1,84 +1,103 @@
 % ============================================================
 % CONSTRAINTS — Vérification des contraintes dures
 % Projet Logic Programming — GL3 2026
+% Version 2 : support amphi/groupe + building_filiere
+% ============================================================
+:- consult(knowledge_base).
+
+% ============================================================
+% HELPERS — Extraction d'informations selon le mode
 % ============================================================
 
-:- consult(knowledge_base).
+% Récupère la filière d'un task
+task_filiere(task(Course, _, filiere, FiliereID), FiliereID) :-
+    course(Course, _, _, FiliereID, _, amphi).
+
+task_filiere(task(Course, _, groupe, GroupID), FiliereID) :-
+    course(Course, _, _, FiliereID, _, groupe),
+    group(GroupID, FiliereID, _).
+
+% Enrollment total d'une filière (pour les amphi)
+filiere_enrollment(FiliereID, Total) :-
+    findall(N, group(_, FiliereID, N), Ns),
+    sumlist(Ns, Total).
+
+% Enrollment d'un task (amphi = total filière, groupe = taille groupe)
+task_enrollment(task(Course, _, filiere, FiliereID), Total) :-
+    course(Course, _, _, FiliereID, _, amphi),
+    filiere_enrollment(FiliereID, Total).
+
+task_enrollment(task(Course, _, groupe, GroupID), Size) :-
+    course(Course, _, _, _, _, groupe),
+    group(GroupID, _, Size).
+
+% Equipement requis par un cours
+task_equipment(task(Course, _, _, _), Equip) :-
+    course(Course, _, _, _, Equip, _).
 
 % ============================================================
 % CONTRAINTE 1 : Pas de conflit de salle
 % Une salle ne peut accueillir qu'une seule session à la fois
 % ============================================================
 room_free(Room, Time, Schedule) :-
-    \+ member(session(_, _, Room, Time), Schedule).
+    \+ member(session(_, Room, Time), Schedule).
 
 % ============================================================
-% CONTRAINTE 2 : Pas de conflit de groupe
-% Un groupe ne peut assister qu'à une seule session à la fois
+% CONTRAINTE 2 : Pas de conflit de groupe/filière
+% — Mode groupe : le groupe ne doit pas être occupé à ce créneau
+% — Mode amphi  : aucun groupe de la filière ne doit être occupé
+%                 + la filière elle-même n'a pas déjà un amphi
 % ============================================================
-group_free(Course, Time, Schedule) :-
-    course(Course, _, _, Group, _),
+
+% Cas groupe
+group_free(task(Course, _, groupe, GroupID), Time, Schedule) :-
     \+ (
-        member(session(C2, _, _, Time), Schedule),
-        course(C2, _, _, Group, _),
-        C2 \= Course
+        member(session(OtherTask, _, Time), Schedule),
+        OtherTask = task(_, _, groupe, GroupID)
+    ),
+    % Vérifier aussi qu'aucun amphi de sa filière n'occupe ce créneau
+    group(GroupID, FiliereID, _),
+    \+ (
+        member(session(OtherTask2, _, Time), Schedule),
+        OtherTask2 = task(_, _, filiere, FiliereID)
+    ).
+
+% Cas amphi
+group_free(task(Course, _, filiere, FiliereID), Time, Schedule) :-
+    % Aucun groupe de cette filière ne doit être occupé à ce créneau
+    \+ (
+        member(session(OtherTask, _, Time), Schedule),
+        OtherTask = task(_, _, groupe, OtherGroup),
+        group(OtherGroup, FiliereID, _)
+    ),
+    % La filière n'a pas déjà un amphi à ce créneau
+    \+ (
+        member(session(OtherTask2, _, Time), Schedule),
+        OtherTask2 = task(_, _, filiere, FiliereID)
     ).
 
 % ============================================================
 % CONTRAINTE 3 : Capacité suffisante
-% La salle doit pouvoir accueillir tous les étudiants du groupe
+% — Mode groupe : salle >= taille du groupe
+% — Mode amphi  : salle >= somme de tous les groupes de la filière
 % ============================================================
-capacity_ok(Course, Room) :-
-    course(Course, _, _, Group, _),
-    group(Group, Size),
+capacity_ok(Task, Room) :-
+    task_enrollment(Task, Required),
     room(Room, Cap, _, _, _),
-    Cap >= Size.
+    Cap >= Required.
 
 % ============================================================
 % CONTRAINTE 4 : Équipement compatible
 % La salle doit avoir l'équipement requis par le cours
 % ============================================================
-equipment_ok(Course, Room) :-
-    course(Course, _, _, _, Equip),
+equipment_ok(Task, Room) :-
+    task_equipment(Task, Equip),
     room(Room, _, Equip, _, _).
 
 % ============================================================
 % CONTRAINTE 5 : Instructeur disponible
 % Le créneau doit être dans les disponibilités de l'instructeur
+% On indexe toujours par CourseID
 % ============================================================
-instructor_ok(Course, Time) :-
-    available(Course, Time).
-
-% ============================================================
-% VÉRIFICATION GLOBALE : toutes les contraintes en une fois
-% Ordre optimisé : les plus restrictives d'abord (pruning max)
-% ============================================================
-all_constraints_ok(Course, Room, Time, Schedule) :-
-    equipment_ok(Course, Room),    % élimine le plus de cas
-    capacity_ok(Course, Room),     % élimine selon taille
-    instructor_ok(Course, Time),   % élimine selon dispo
-    room_free(Room, Time, Schedule),
-    group_free(Course, Time, Schedule).
-
-% ============================================================
-% DIAGNOSTIC : explique pourquoi une assignation échoue
-% Utile pour le débogage et la défense orale
-% ============================================================
-check_violations(Course, Room, Time, Schedule) :-
-    format("~n=== Diagnostic session ~w -> salle ~w, créneau ~w ===~n",
-           [Course, Room, Time]),
-    ( \+ equipment_ok(Course, Room)
-      -> format("  VIOLATION: équipement incompatible~n")
-      ;  format("  OK: équipement compatible~n") ),
-    ( \+ capacity_ok(Course, Room)
-      -> format("  VIOLATION: salle trop petite~n")
-      ;  format("  OK: capacité suffisante~n") ),
-    ( \+ instructor_ok(Course, Time)
-      -> format("  VIOLATION: instructeur indisponible~n")
-      ;  format("  OK: instructeur disponible~n") ),
-    ( \+ room_free(Room, Time, Schedule)
-      -> format("  VIOLATION: salle déjà occupée~n")
-      ;  format("  OK: salle libre~n") ),
-    ( \+ group_free(Course, Time, Schedule)
-      -> format("  VIOLATION: groupe déjà en cours~n")
-      ;  format("  OK: groupe libre~n") ).
+instructor_ok(task(Course, _, _, _),
+wqt-iqhk-dhj
