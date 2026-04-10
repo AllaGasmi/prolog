@@ -1,57 +1,53 @@
 % ============================================================
 % SCHEDULER — Génération récursive du planning
 % Projet Logic Programming — GL3 2026
+% Version 2 : support amphi/groupe + instructors
 % ============================================================
-
 :- consult(knowledge_base).
 :- consult(constraints).
 
 % ============================================================
-% POINT D ENTRÉE PRINCIPAL
+% POINT D'ENTRÉE PRINCIPAL
 % generate_schedule(-Schedule)
-% Schedule = liste de session(Cours, IndexSession, Salle, Créneau)
+% Schedule = liste de session(Task, Room, Time)
 % ============================================================
 generate_schedule(Schedule) :-
-    findall(C, course(C, _, _, _, _), Courses),
-    assign_all(Courses, [], Schedule).
+    generate_tasks(Tasks),
+    assign_all(Tasks, [], Schedule).
 
 % ============================================================
-% ASSIGNATION DE TOUS LES COURS
-% assign_all(+Courses, +Acc, -FinalSchedule)
+% GÉNÉRATION DE TOUS LES TASKS
+% — cours amphi  : NbSessions tasks, cible = filière
+% — cours groupe : NbSessions x NbGroupes tasks, cible = groupe
 % ============================================================
+generate_tasks(Tasks) :-
+    findall(T, task_for_course(T), Tasks).
 
-% Cas de base : plus aucun cours à placer
+% Cas amphi : une séance pour toute la filière
+task_for_course(task(Course, Session, filiere, FiliereID)) :-
+    course(Course, NbSessions, _, FiliereID, _, amphi),
+    between(1, NbSessions, Session).
+
+% Cas groupe : une séance par groupe de la filière
+task_for_course(task(Course, Session, groupe, GroupID)) :-
+    course(Course, NbSessions, _, FiliereID, _, groupe),
+    between(1, NbSessions, Session),
+    group(GroupID, FiliereID, _).
+
+% ============================================================
+% ASSIGNATION DE TOUS LES TASKS
+% assign_all(+Tasks, +Acc, -FinalSchedule)
+% ============================================================
 assign_all([], Schedule, Schedule).
-
-% Cas récursif : placer le cours C puis les suivants
-assign_all([C|Rest], Acc, Final) :-
-    course(C, NbSessions, _, _, _),
-    assign_sessions(C, NbSessions, Acc, Acc2),
+assign_all([Task|Rest], Acc, Final) :-
+    assign_task(Task, Acc, Acc2),
     assign_all(Rest, Acc2, Final).
 
 % ============================================================
-% ASSIGNATION DES SESSIONS D UN COURS
-% assign_sessions(+Course, +K, +Acc, -NewAcc)
-% K = nombre de sessions restantes à placer
+% ASSIGNATION D'UN TASK
+% Cherche une salle + créneau valides pour ce task
 % ============================================================
-
-% Cas de base : toutes les sessions sont placées
-assign_sessions(_, 0, Acc, Acc).
-
-% Cas récursif : placer la K-ième session
-assign_sessions(Course, K, Acc, Final) :-
-    K > 0,
-
-    % Chercher une salle et un créneau candidats
+assign_task(Task, Acc, [session(Task, Room, Time)|Acc]) :-
     room(Room, _, _, _, _),
     timeslot(Time, _, _),
-
-    % Vérifier TOUTES les contraintes AVANT de continuer
-    % (pruning précoce = efficacité maximale)
-    all_constraints_ok(Course, Room, Time, Acc),
-
-    % Ajouter la session au planning partiel
-    K1 is K - 1,
-    assign_sessions(Course, K1,
-                    [session(Course, K, Room, Time)|Acc],
-                    Final).
+    all_constraints_ok(Task, Room, Time, Acc).
