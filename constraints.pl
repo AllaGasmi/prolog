@@ -40,7 +40,7 @@ task_equipment(task(Course, _, _, _), Equip) :-
 % Une salle ne peut accueillir qu une seule session à la fois
 % ============================================================
 
-# schedule de toutes les filiéres ici !!!!!
+
 
 room_free(Room, Time, Schedule) :-
     \+ member(session(_, Room, Time), Schedule).
@@ -103,9 +103,10 @@ equipment_ok(Task, Room) :-
 % On indexe toujours par CourseID
 % ============================================================
 
-instructor_ok(task(Course, _, _, _), Time, instructor(id, nomProf, coursEnseigne)) :-
-    coursEnseigne = Course,
-    available(id, Time).
+
+instructor_ok(task(Course, _, _, _), Time) :-
+    instructor(ProfID, _, Course),
+    available(ProfID, Time).
 
 % ============================================================
 % CONTRAINTE 6 : Bâtiment affilié à la filière du cours

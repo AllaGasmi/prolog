@@ -98,10 +98,10 @@ group(g19, f_imi, 25). % Groupe S — IMI 3/3
 % ============================================================
 % BÂTIMENTS : building(ID, SeuilEnergieMaxJournalier)
 % ============================================================
-building(b1, 120).   
-building(b2, 100).   
-building(b3,  80).   
-building(b4, 150).   % Amphithéâtres et salles spécialisées
+building(b1, 150).   
+building(b2, 130).   
+building(b3,  90).   
+building(b4, 220).   % Amphithéâtres et salles spécialisées
 
 % building_filiere(BatimentID, FiliereID)
 % Indique que un bâtiment est affecté à une filière donnée
@@ -131,8 +131,8 @@ building_filiere(b4, f_imi).
 % ============================================================
 
 % ── Bâtiment b1 (GL et RT) ───────────────────────────────────
-room(r1,  120, amphi,    b1,  8).   % Amphithéâtre principal
-room(r2,  100, amphi,    b1,  7).   % Amphithéâtre secondaire
+room(r1,  120, projector,    b1,  8).   % Amphithéâtre principal
+room(r2,  100, projector,    b1,  7).   % Amphithéâtre secondaire
 room(r3,  30, projector, b1,  5).
 room(r4,  35, projector, b1,  5).
 room(r5,  20, lab,       b1, 10).
@@ -184,6 +184,29 @@ room(r44, 45, lab,       b4, 12).   % Salle informatique avancée
 room(r45, 40, projector, b4,  7).   % Salle multimédia
 room(r46, 35, lab,       b4, 10).   % Salle de TP spécialisée
 room(r47, 42, projector, b4,  7).
+room(r48, 100, projector, b3, 7).
+% Salles supplémentaires b3 pour IMI
+room(r49, 30, projector, b3, 6).
+room(r50, 28, projector, b3, 6).
+room(r51, 25, lab,       b3, 8).
+room(r52, 30, lab,       b3, 9).
+% ── Salles supplémentaires b1 (GL et RT) ─────────────────────
+room(r53, 30, projector, b1, 5).
+room(r54, 30, lab,       b1, 9).
+room(r55, 28, projector, b1, 5).
+room(r56, 25, lab,       b1, 9).
+
+% ── Salles supplémentaires b2 (BIO et CH) ────────────────────
+room(r57, 30, projector, b2, 4).
+room(r58, 25, lab,       b2, 8).
+room(r59, 28, projector, b2, 4).
+room(r60, 22, lab,       b2, 9).
+
+% ── Salles supplémentaires b3 (IIA et IMI) ───────────────────
+room(r61, 30, projector, b3, 6).
+room(r62, 25, lab,       b3, 8).
+room(r63, 28, projector, b3, 6).
+room(r64, 26, lab,       b3, 9).
 
 % ============================================================
 % COURS : course(ID, NbSessions, Duree, Groupe, Equipement)
@@ -204,7 +227,7 @@ course(marketing,               1, 1, f_gl, projector, groupe).
 
 % ── TD → groupe, projector, duree=1 ──────────────────────────
 course(anglais,                 1, 1, f_gl, projector, groupe).
-course(td_bases_donnees_non_rel,   1, 1, f_gl, projector, groupe).
+
 
 % ── C → amphi, projector, duree=1 ────────────────────────────
 course(analyse_donnees,         1, 1, f_gl, projector, amphi).
@@ -304,18 +327,18 @@ course(tp_tech_acquisition_commande,   1, 2, f_iia, lab, groupe).
 course(thermodynamique_appliquee,      1, 1, f_imi, projector, groupe).
 course(instrumentations_optiques,      1, 1, f_imi, projector, groupe).
 course(gmao,                           1, 1, f_imi, projector, groupe).
-course(tableau_bord_maintenance,       1, 1, f_imi, projector, groupe).
+% course(tableau_bord_maintenance,       1, 1, f_imi, projector, groupe).
 course(mecanique_fluides_thermique,    1, 1, f_imi, projector, groupe).
 course(traitement_numerique_signal,    1, 1, f_imi, projector, groupe).
 course(thermique_industrielle,         1, 1, f_imi, projector, groupe).
 course(micro_controleurs_dsp,          1, 1, f_imi, projector, groupe).
-course(gpao,                           1, 1, f_imi, projector, groupe).
+% course(gpao,                           1, 1, f_imi, projector, groupe)
 course(marketing,                      1, 1, f_imi, projector, groupe).
 course(francais,                       1, 1, f_imi, projector, groupe).
 
 % ── TD → groupe, projector, duree=1 ──────────────────────────
-course(anglais,                        1, 1, f_imi, projector, groupe).
-course(arabe,                          1, 1, f_imi, projector, groupe).
+% course(anglais,                        1, 1, f_imi, projector, groupe).
+% course(arabe,                          1, 1, f_imi, projector, groupe).
 
 % ── C → amphi, projector, duree=1 ────────────────────────────
 course(reseaux_informatiques,          1, 1, f_imi, projector, amphi).
@@ -335,31 +358,31 @@ course(tp_gpao,                        1, 2, f_imi, lab, groupe).
 % ══════════════════════════════════════════════════════════════
 
 % ── CI → groupe, projector, duree=1 ──────────────────────────
-course(genie_fermentaire,              1, 1, f_bi, projector, groupe).
-course(mecanique_fluides_thermique,    1, 1, f_bi, projector, groupe).
-course(analyse_sociologique_org,       1, 1, f_bi, projector, groupe).
-course(transfert_matiere,              1, 1, f_bi, projector, groupe).
-course(chimie_organique_industrielle,  1, 1, f_bi, projector, groupe).
-course(analyse_numerique,              1, 1, f_bi, projector, groupe).
-course(analyses_chimiques,             1, 1, f_bi, projector, groupe).
-course(operations_unitaires,           1, 1, f_bi, projector, groupe).
-course(analyses_physiques_spectro,     1, 1, f_bi, projector, groupe).
+course(genie_fermentaire,              1, 1, f_bio, projector, groupe).
+course(mecanique_fluides_thermique,    1, 1, f_bio, projector, groupe).
+course(analyse_sociologique_org,       1, 1, f_bio, projector, groupe).
+course(transfert_matiere,              1, 1, f_bio, projector, groupe).
+course(chimie_organique_industrielle,  1, 1, f_bio, projector, groupe).
+course(analyse_numerique,              1, 1, f_bio, projector, groupe).
+course(analyses_chimiques,             1, 1, f_bio, projector, groupe).
+course(operations_unitaires,           1, 1, f_bio, projector, groupe).
+course(analyses_physiques_spectro,     1, 1, f_bio, projector, groupe).
 
 % ── TD → groupe, projector, duree=1 ──────────────────────────
 course(anglais,                        1, 1, f_bi, projector, groupe).
 
 % ── C → amphi, projector, duree=1 ────────────────────────────
-course(biotechnologie_vegetale,        1, 1, f_bi, projector, amphi).
-course(genie_enzymatique,              1, 1, f_bi, projector, amphi).
-course(commerce_international,         1, 1, f_bi, projector, amphi).
-course(securite_hygiene,               1, 1, f_bi, projector, amphi).
+course(biotechnologie_vegetale,        1, 1, f_bio, projector, amphi).
+course(genie_enzymatique,              1, 1, f_bio, projector, amphi).
+course(commerce_international,         1, 1, f_bio, projector, amphi).
+course(securite_hygiene,               1, 1, f_bio, projector, amphi).
 
 % ── TP duree=2 → groupe, lab ──────────────────────────────────
-course(tp_biotechnologie_vegetale,     1, 2, f_bi, lab, groupe).
-course(tp_mecanique_fluides,           1, 2, f_bi, lab, groupe).
-course(tp_analyses_chimiques,          1, 2, f_bi, lab, groupe).
-course(tp_genie_enzymatique,           1, 2, f_bi, lab, groupe).
-course(tp_analyses_spectroscopie,      1, 2, f_bi, lab, groupe).
+course(tp_biotechnologie_vegetale,     1, 2, f_bio, lab, groupe).
+course(tp_mecanique_fluides,           1, 2, f_bio, lab, groupe).
+course(tp_analyses_chimiques,          1, 2, f_bio, lab, groupe).
+course(tp_genie_enzymatique,           1, 2, f_bio, lab, groupe).
+course(tp_analyses_spectroscopie,      1, 2, f_bio, lab, groupe).
 
 % ══════════════════════════════════════════════════════════════
 %  CH — Chimie Industrielle  CH3/1
@@ -472,6 +495,11 @@ instructor(p_hellal,      hellal_faysal,        analyses_chimiques).
 instructor(p_abdimoumen,  abdimoumen_souhir,    operations_unitaires).
 instructor(p_abidi,       abidi_ferid,          analyses_physiques_spectro).
 instructor(p_abderabba,   abderabba_nadia,      securite_hygiene).
+instructor(p_zaouali,    zaouali_yosr,     tp_biotechnologie_vegetale).
+instructor(p_kaddech,    kaddech_slim,     tp_mecanique_fluides).
+instructor(p_hellal,     hellal_faysal,    tp_analyses_chimiques).
+instructor(p_gargouri,   gargouri_mohamed, tp_genie_enzymatique).
+instructor(p_abidi,      abidi_ferid,      tp_analyses_spectroscopie).
 
 % ── CH ───────────────────────────────────────────────────────
 instructor(p_belgaied,    belgaied_jameleddine, methodes_separation).
@@ -484,7 +512,52 @@ instructor(p_hellal,      hellal_faysal,        optimisation).
 instructor(p_monser,      monser_lotfi,         traitement_eaux).
 instructor(p_chatti,      chatti_abderrazak,    autom_regul_capteurs).
 instructor(p_touj,        touj_nedra,           tp_methodes_separation).
+% ── TPs CH — instructeurs ────────────────────────────────────
+instructor(p_chatti,    chatti_abderrazak, tp_autom_regul_capteurs).
+instructor(p_khayat,    khayat_feten,      tp_methodes_numeriques).
+instructor(p_touj,      touj_nedra,        tp_methodes_separation).
+instructor(p_alma,      alma_mejri,        tp_etats_matiere).
+instructor(p_gatri,     gatri_rafik,       tp_strategie_synthese).
+instructor(p_monser,    monser_lotfi,      tp_traitement_eaux).
 
+% ── TPs GL ───────────────────────────────────────────────────
+instructor(p_khalgui,   khalgui_mohamed,  tp_programmation_logique).
+instructor(p_ouni,      ouni_sofiane,     tp_fond_syst_repartis).
+instructor(p_gasmi_g,   gasmi_ghada,      tp_methodologies_conception).
+instructor(p_damergi,   damergi_emir,     tp_co_design).
+instructor(p_arbi,      arbi_adnen,       tp_analyse_donnees).
+instructor(p_sellaouti, sellaouti_aymen,  tp_protocoles_comm_web).
+instructor(p_baklouti,  baklouti_fatma,   td_bases_donnees_non_rel).
+
+% ── TPs RT ───────────────────────────────────────────────────
+instructor(p_ouni,    ouni_sofiane,   tp_admin_surveillance_reseaux).
+instructor(p_loukil,  loukil_adlene,  tp_securite_reseaux).
+instructor(p_khayat,  khayat_feten,   tp_analyse_numerique).
+instructor(p_amara,   amara_boujemaa_rim, tp_signaux_systemes).
+instructor(p_mami,    mami_imen,      tp_admin_bases_donnees).
+instructor(p_ben_yahia, ben_yahia_saloua, tp_developpement_javaEE).
+instructor(p_miled,   miled_wided,    projet_personnel_professionnel).
+
+% ── TPs IIA ──────────────────────────────────────────────────
+instructor(p_harbaoui, harbaoui_imen,  tp_recherche_operationnelle).
+instructor(p_taktak,   taktak_hajer,   tp_programmation_c_cpp).
+instructor(p_ghezail,  ghezail_feiza,  tp_automatismes_industriels).
+instructor(p_ben_said, ben_said_salma, tp_bases_donnees).
+instructor(p_sakhraoui,sakhraoui_amir, tp_conception_syst_mecaniques).
+instructor(p_bellamine,bellamine_med_sahbi, tp_architecture_avancee).
+instructor(p_aloui,    aloui_ridha,    tp_modelisation_ident_estim).
+instructor(p_braham,   braham_ahmed,   tp_tech_acquisition_commande).
+
+% ── TPs IMI ──────────────────────────────────────────────────
+instructor(p_zaghdoudi, zaghdoudi_med_chaker, tp_thermodynamique).
+instructor(p_hfaidh,    hfaidh_imen,          tp_instrumentations_optiques).
+instructor(p_yacoub,    yacoub_slim,          tp_traitement_signal).
+instructor(p_ben_romdhane, ben_romdhane_taib, tp_gmao).
+instructor(p_hfaidh, hfaidh_imen, tp_thermique_industrielle).
+instructor(p_kammoun, kammoun_najeh, tp_micro_controleurs_dsp).
+instructor(p_jaafer, jaafer_imen, tp_traitement_signal).
+instructor(p_bohli, bohli_nadra, tp_gpao).
+instructor(p_zaghdoudi, zaghdoudi_med_chaker, tp_gmao).
 % ============================================================
 % DISPONIBILITÉS DÉCLARÉES PAR LES PROFS
 % available(IDProf, CreneauID)
@@ -641,6 +714,9 @@ available(p_ben_said, t26). available(p_ben_said, t27).
 available(p_ben_romdhane, t2).  available(p_ben_romdhane, t3).  available(p_ben_romdhane, t7).
 available(p_ben_romdhane, t8).  available(p_ben_romdhane, t12). available(p_ben_romdhane, t13).
 available(p_ben_romdhane, t26). available(p_ben_romdhane, t27). available(p_ben_romdhane, t28).
+available(p_ben_romdhane, t4). available(p_ben_romdhane, t5).
+available(p_ben_romdhane, t9). available(p_ben_romdhane, t14).
+available(p_ben_romdhane, t16).
 
 % ── Braham Ahmed ────────────────────────────────────────────
 available(p_braham, t4).  available(p_braham, t5).  available(p_braham, t9).
@@ -666,17 +742,24 @@ available(p_sakhraoui, t26). available(p_sakhraoui, t27). available(p_sakhraoui,
 available(p_zaghdoudi, t1).  available(p_zaghdoudi, t2).  available(p_zaghdoudi, t11).
 available(p_zaghdoudi, t12). available(p_zaghdoudi, t21). available(p_zaghdoudi, t22).
 available(p_zaghdoudi, t26). available(p_zaghdoudi, t27).
-
+available(p_zaghdoudi, t3).  available(p_zaghdoudi, t4).
+available(p_zaghdoudi, t6).  available(p_zaghdoudi, t7).
+available(p_zaghdoudi, t13). available(p_zaghdoudi, t14).
 % ── Hfaidh Imen ─────────────────────────────────────────────
 available(p_hfaidh, t6).  available(p_hfaidh, t7).  available(p_hfaidh, t11).
 available(p_hfaidh, t12). available(p_hfaidh, t16). available(p_hfaidh, t17).
 available(p_hfaidh, t26). available(p_hfaidh, t27). available(p_hfaidh, t28).
+available(p_hfaidh, t1).  available(p_hfaidh, t4).
+available(p_hfaidh, t8).  available(p_hfaidh, t9).
+available(p_hfaidh, t13). available(p_hfaidh, t18).
 
 % ── Jaafer Imen ─────────────────────────────────────────────
 available(p_jaafer, t4).  available(p_jaafer, t5).  available(p_jaafer, t9).
 available(p_jaafer, t10). available(p_jaafer, t14). available(p_jaafer, t15).
 available(p_jaafer, t26). available(p_jaafer, t27).
-
+available(p_jaafer, t1).  available(p_jaafer, t2).
+available(p_jaafer, t3).  available(p_jaafer, t11).
+available(p_jaafer, t16). available(p_jaafer, t21).
 % ── Kaddech Slim ────────────────────────────────────────────
 available(p_kaddech, t1).  available(p_kaddech, t2).  available(p_kaddech, t16).
 available(p_kaddech, t17). available(p_kaddech, t21). available(p_kaddech, t22).
@@ -711,6 +794,9 @@ available(p_yaich, t26). available(p_yaich, t27).
 available(p_kammoun, t6).  available(p_kammoun, t7).  available(p_kammoun, t8).
 available(p_kammoun, t16). available(p_kammoun, t17). available(p_kammoun, t18).
 available(p_kammoun, t26). available(p_kammoun, t27). available(p_kammoun, t28).
+available(p_kammoun, t1).  available(p_kammoun, t2).
+available(p_kammoun, t3).  available(p_kammoun, t13).
+available(p_kammoun, t14). available(p_kammoun, t19).
 
 % ── Hamdi Mokhtar ───────────────────────────────────────────
 available(p_hamdi_m, t11). available(p_hamdi_m, t12). available(p_hamdi_m, t13).
@@ -1061,6 +1147,9 @@ available(p_bohli, t14).
 available(p_bohli, t16).
 available(p_bohli, t17).
 available(p_bohli, t19).
+available(p_bohli, t1).  available(p_bohli, t2).
+available(p_bohli, t3).  available(p_bohli, t6).
+available(p_bohli, t7).  available(p_bohli, t11).
 
 % ── Saadallah Wecim ──────────────────────────────────────────
 available(p_saadallah, t13).
@@ -1221,3 +1310,100 @@ available(p_sakhraoui, t5).
 available(p_sakhraoui, t16).
 available(p_sakhraoui, t17).
 available(p_sakhraoui, t21).
+% ── Disponibilités élargies tous profs IMI ───────────────────
+available(p_zaghdoudi, t8).  available(p_zaghdoudi, t9).
+available(p_zaghdoudi, t15). available(p_zaghdoudi, t16).
+available(p_zaghdoudi, t19). available(p_zaghdoudi, t20).
+
+available(p_hfaidh, t10). available(p_hfaidh, t11).
+available(p_hfaidh, t15). available(p_hfaidh, t20).
+available(p_hfaidh, t21). available(p_hfaidh, t22).
+
+available(p_jaafer, t10). available(p_jaafer, t15).
+available(p_jaafer, t17). available(p_jaafer, t19).
+available(p_jaafer, t20). available(p_jaafer, t22).
+
+available(p_kaddech, t3).  available(p_kaddech, t4).
+available(p_kaddech, t8).  available(p_kaddech, t9).
+available(p_kaddech, t13). available(p_kaddech, t14).
+
+available(p_yacoub, t1).  available(p_yacoub, t2).
+available(p_yacoub, t3).  available(p_yacoub, t6).
+available(p_yacoub, t7).  available(p_yacoub, t8).
+
+available(p_bohli, t8).  available(p_bohli, t9).
+available(p_bohli, t12). available(p_bohli, t13).
+available(p_bohli, t18). available(p_bohli, t20).
+
+available(p_kammoun, t4).  available(p_kammoun, t5).
+available(p_kammoun, t10). available(p_kammoun, t15).
+available(p_kammoun, t20). available(p_kammoun, t21).
+
+available(p_ben_romdhane, t15). available(p_ben_romdhane, t16).
+available(p_ben_romdhane, t19). available(p_ben_romdhane, t20).
+available(p_ben_romdhane, t21). available(p_ben_romdhane, t22).
+
+available(p_jaafer, t18). available(p_jaafer, t21).
+available(p_basti,  t13). available(p_basti,  t14).
+available(p_basti,  t16). available(p_basti,  t17).
+available(p_yaich,  t4).  available(p_yaich,  t5).
+available(p_yaich,  t9).  available(p_yaich,  t14).
+available(p_saadallah, t6). available(p_saadallah, t7).
+available(p_saadallah, t8). available(p_saadallah, t9).% ── Disponibilités supplémentaires profs RT ──────────────────
+available(p_toumi,    t14). available(p_toumi,    t15).
+available(p_toumi,    t16). available(p_toumi,    t19).
+available(p_loukil,   t4).  available(p_loukil,   t5).
+available(p_loukil,   t9).  available(p_loukil,   t14).
+available(p_karoui,   t6).  available(p_karoui,   t7).
+available(p_karoui,   t11). available(p_karoui,   t12).
+available(p_afif,     t1).  available(p_afif,     t2).
+available(p_afif,     t18). available(p_afif,     t19).
+available(p_mosbahi,  t11). available(p_mosbahi,  t12).
+available(p_mosbahi,  t16). available(p_mosbahi,  t17).
+available(p_amara,    t3).  available(p_amara,    t4).
+available(p_amara,    t6).  available(p_amara,    t7).
+available(p_mami,     t1).  available(p_mami,     t2).
+available(p_mami,     t6).  available(p_mami,     t7).
+available(p_khayat,   t2).  available(p_khayat,   t3).
+available(p_khayat,   t11). available(p_khayat,   t12).
+available(p_dhouib,   t1).  available(p_dhouib,   t2).
+available(p_dhouib,   t3).  available(p_dhouib,   t6).
+available(p_miled,    t1).  available(p_miled,    t6).
+available(p_miled,    t11). available(p_miled,    t12).
+available(p_ben_yahia,t1).  available(p_ben_yahia,t2).
+available(p_ben_yahia,t3).  available(p_ben_yahia,t6).
+available(p_ouni,     t4).  available(p_ouni,     t5).
+available(p_ouni,     t6).  available(p_ouni,     t7).
+available(p_zaghdoudi, t23). available(p_zaghdoudi, t24).
+available(p_zaghdoudi, t25).
+available(p_hfaidh,    t23). available(p_hfaidh,    t24).
+available(p_hfaidh,    t25).
+available(p_jaafer,    t23). available(p_jaafer,    t24).
+available(p_jaafer,    t25).
+available(p_kammoun,   t23). available(p_kammoun,   t24).
+available(p_kammoun,   t25).
+available(p_bohli,     t23). available(p_bohli,     t24).
+available(p_bohli,     t25).
+available(p_yacoub,    t23). available(p_yacoub,    t24).
+available(p_yacoub,    t25).
+available(p_ben_romdhane, t23). available(p_ben_romdhane, t24).
+available(p_ben_romdhane, t25).
+available(p_kaddech,   t23). available(p_kaddech,   t24).
+available(p_kaddech,   t25).
+% ── Créneaux supplémentaires pour g19 ────────────────────────
+available(p_zaghdoudi, t15). available(p_zaghdoudi, t17).
+available(p_zaghdoudi, t18). available(p_zaghdoudi, t20).
+available(p_hfaidh,    t20). available(p_hfaidh,    t21).
+available(p_hfaidh,    t22). available(p_hfaidh,    t23).
+available(p_jaafer,    t20). available(p_jaafer,    t21).
+available(p_jaafer,    t22). available(p_jaafer,    t23).
+available(p_kammoun,   t6).  available(p_kammoun,   t7).
+available(p_kammoun,   t8).  available(p_kammoun,   t9).
+available(p_bohli,     t15). available(p_bohli,     t16).
+available(p_bohli,     t21). available(p_bohli,     t22).
+available(p_yacoub,    t4).  available(p_yacoub,    t5).
+available(p_yacoub,    t9).  available(p_yacoub,    t20).
+available(p_ben_romdhane, t17). available(p_ben_romdhane, t18).
+available(p_ben_romdhane, t19). available(p_ben_romdhane, t20).
+available(p_kaddech,   t15). available(p_kaddech,   t16).
+available(p_kaddech,   t20). available(p_kaddech,   t21).
