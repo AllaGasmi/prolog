@@ -1,0 +1,391 @@
+========================================
+         PLANNING UNIVERSITAIRE - GL3 2026
+         Planning complet généré
+========================================
+
+=== STATISTIQUES GLOBALES ===
+Sessions totales   : 329
+  - Amphithéâtres  : 18
+  - Groupes        : 311
+Filières couvertes : 6
+========================================
+
+
+=== RAPPORT ÉNERGÉTIQUE ===
+Consommation totale campus : 2312 unités
+
+  Détail par bâtiment :
+  Bat. b1 : 766 unités (seuil/jour : 150)
+    monday : 133 (89%)
+    tuesday : 148 (99%)
+    wednesday : 147 (98%)
+    thursday : 142 (95%)
+    friday : 149 (99%)
+    saturday : 47 (31%)
+  Bat. b2 : 560 unités (seuil/jour : 130)
+    monday : 86 (66%)
+    tuesday : 101 (78%)
+    wednesday : 99 (76%)
+    thursday : 129 (99%)
+    friday : 78 (60%)
+    saturday : 67 (52%)
+  Bat. b3 : 526 unités (seuil/jour : 90)
+    monday : 90 (100%)
+    tuesday : 87 (97%)
+    wednesday : 90 (100%)
+    thursday : 90 (100%)
+    friday : 84 (93%)
+    saturday : 85 (94%)
+  Bat. b4 : 460 unités (seuil/jour : 220)
+    monday : 103 (47%)
+    tuesday : 123 (56%)
+    wednesday : 68 (31%)
+    thursday : 80 (36%)
+    friday : 86 (39%)
+
+Imbalance journalière max : 260 unités
+
+========================================
+         PLANNING DÉTAILLÉ PAR FILIÈRE
+========================================
+
+>>> Filière : GÃ©nie Logiciel (f_gl) <<<
+  tuesday 9.75 h  |  programmation_logique (session 1)  |  Amphi-f_gl  |  Prof: khalgui_mohamed  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  wednesday 8.00 h  |  bases_donnees_rel_cours (session 1)  |  Amphi-f_gl  |  Prof: baklouti_fatma  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  friday 8.00 h  |  protocoles_comm_web (session 1)  |  Amphi-f_gl  |  Prof: sellaouti_aymen  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  monday 11.50 h  |  methodologies_conception (session 1)  |  Amphi-f_gl  |  Prof: gasmi_ghada  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  tuesday 8.00 h  |  co_design (session 1)  |  Amphi-f_gl  |  Prof: damergi_emir  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  monday 9.75 h  |  fondements_syst_repartis (session 1)  |  Amphi-f_gl  |  Prof: ouni_sofiane  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  monday 8.00 h  |  analyse_donnees (session 1)  |  Amphi-f_gl  |  Prof: arbi_adnen  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  wednesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g3  |  Prof: taktak_hajer  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  friday 15.75 h  |  tp_protocoles_comm_web (session 1)  |  Groupe-g3  |  Prof: sellaouti_aymen  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  friday 14.00 h  |  tp_analyse_donnees (session 1)  |  Groupe-g3  |  Prof: arbi_adnen  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  saturday 9.75 h  |  tp_co_design (session 1)  |  Groupe-g3  |  Prof: damergi_emir  |  Salle r13 (lab, bat.b1)  |  Cap: 26  |  10/h
+  thursday 14.00 h  |  tp_methodologies_conception (session 1)  |  Groupe-g3  |  Prof: gasmi_ghada  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  thursday 9.75 h  |  tp_fond_syst_repartis (session 1)  |  Groupe-g3  |  Prof: ouni_sofiane  |  Salle r13 (lab, bat.b1)  |  Cap: 26  |  10/h
+  saturday 8.00 h  |  tp_programmation_logique (session 1)  |  Groupe-g3  |  Prof: khalgui_mohamed  |  Salle r13 (lab, bat.b1)  |  Cap: 26  |  10/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g3  |  Prof: bichiou_imene  |  Salle r43 (projector, bat.b4)  |  Cap: 50  |  8/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g3  |  Prof: ben_gamra_imene  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 11.50 h  |  complexite_algorithmes (session 1)  |  Groupe-g3  |  Prof: mliki_hazar  |  Salle r10 (projector, bat.b1)  |  Cap: 38  |  6/h
+  tuesday 14.00 h  |  francais (session 1)  |  Groupe-g3  |  Prof: zanina_wiem  |  Salle r43 (projector, bat.b4)  |  Cap: 50  |  8/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g3  |  Prof: sfaxi_mourad  |  Salle r43 (projector, bat.b4)  |  Cap: 50  |  8/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g3  |  Prof: arbi_adnen  |  Salle r10 (projector, bat.b1)  |  Cap: 38  |  6/h
+  thursday 11.50 h  |  algorithmique (session 1)  |  Groupe-g3  |  Prof: gasmi_ghada  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g2  |  Prof: taktak_hajer  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  friday 14.00 h  |  tp_protocoles_comm_web (session 1)  |  Groupe-g2  |  Prof: sellaouti_aymen  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  wednesday 14.00 h  |  tp_analyse_donnees (session 1)  |  Groupe-g2  |  Prof: arbi_adnen  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  saturday 9.75 h  |  tp_co_design (session 1)  |  Groupe-g2  |  Prof: damergi_emir  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  thursday 14.00 h  |  tp_methodologies_conception (session 1)  |  Groupe-g2  |  Prof: gasmi_ghada  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  thursday 9.75 h  |  tp_fond_syst_repartis (session 1)  |  Groupe-g2  |  Prof: ouni_sofiane  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  saturday 8.00 h  |  tp_programmation_logique (session 1)  |  Groupe-g2  |  Prof: khalgui_mohamed  |  Salle r54 (lab, bat.b1)  |  Cap: 30  |  9/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g2  |  Prof: bichiou_imene  |  Salle r4 (projector, bat.b1)  |  Cap: 35  |  5/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g2  |  Prof: ben_gamra_imene  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 11.50 h  |  complexite_algorithmes (session 1)  |  Groupe-g2  |  Prof: mliki_hazar  |  Salle r4 (projector, bat.b1)  |  Cap: 35  |  5/h
+  tuesday 14.00 h  |  francais (session 1)  |  Groupe-g2  |  Prof: zanina_wiem  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g2  |  Prof: sfaxi_mourad  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g2  |  Prof: arbi_adnen  |  Salle r4 (projector, bat.b1)  |  Cap: 35  |  5/h
+  thursday 11.50 h  |  algorithmique (session 1)  |  Groupe-g2  |  Prof: gasmi_ghada  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g1  |  Prof: taktak_hajer  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 11.50 h  |  tp_protocoles_comm_web (session 1)  |  Groupe-g1  |  Prof: sellaouti_aymen  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  wednesday 14.00 h  |  tp_analyse_donnees (session 1)  |  Groupe-g1  |  Prof: arbi_adnen  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 9.75 h  |  tp_co_design (session 1)  |  Groupe-g1  |  Prof: damergi_emir  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  thursday 14.00 h  |  tp_methodologies_conception (session 1)  |  Groupe-g1  |  Prof: gasmi_ghada  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  thursday 9.75 h  |  tp_fond_syst_repartis (session 1)  |  Groupe-g1  |  Prof: ouni_sofiane  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  saturday 8.00 h  |  tp_programmation_logique (session 1)  |  Groupe-g1  |  Prof: khalgui_mohamed  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g1  |  Prof: bichiou_imene  |  Salle r53 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g1  |  Prof: ben_gamra_imene  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 11.50 h  |  complexite_algorithmes (session 1)  |  Groupe-g1  |  Prof: mliki_hazar  |  Salle r53 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 14.00 h  |  francais (session 1)  |  Groupe-g1  |  Prof: zanina_wiem  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g1  |  Prof: sfaxi_mourad  |  Salle r53 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g1  |  Prof: arbi_adnen  |  Salle r53 (projector, bat.b1)  |  Cap: 30  |  5/h
+  thursday 11.50 h  |  algorithmique (session 1)  |  Groupe-g1  |  Prof: gasmi_ghada  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g14  |  Prof: taktak_hajer  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 11.50 h  |  tp_protocoles_comm_web (session 1)  |  Groupe-g14  |  Prof: sellaouti_aymen  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  wednesday 14.00 h  |  tp_analyse_donnees (session 1)  |  Groupe-g14  |  Prof: arbi_adnen  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 9.75 h  |  tp_co_design (session 1)  |  Groupe-g14  |  Prof: damergi_emir  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  thursday 14.00 h  |  tp_methodologies_conception (session 1)  |  Groupe-g14  |  Prof: gasmi_ghada  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  thursday 9.75 h  |  tp_fond_syst_repartis (session 1)  |  Groupe-g14  |  Prof: ouni_sofiane  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  tuesday 15.75 h  |  tp_programmation_logique (session 1)  |  Groupe-g14  |  Prof: khalgui_mohamed  |  Salle r13 (lab, bat.b1)  |  Cap: 26  |  10/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g14  |  Prof: bichiou_imene  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g14  |  Prof: ben_gamra_imene  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 11.50 h  |  complexite_algorithmes (session 1)  |  Groupe-g14  |  Prof: mliki_hazar  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 14.00 h  |  francais (session 1)  |  Groupe-g14  |  Prof: zanina_wiem  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g14  |  Prof: sfaxi_mourad  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g14  |  Prof: arbi_adnen  |  Salle r3 (projector, bat.b1)  |  Cap: 30  |  5/h
+  thursday 11.50 h  |  algorithmique (session 1)  |  Groupe-g14  |  Prof: gasmi_ghada  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+
+>>> Filière : RÃ©seaux et TÃ©lÃ©communications (f_rt) <<<
+  thursday 8.00 h  |  admin_surveillance_reseaux (session 1)  |  Amphi-f_rt  |  Prof: ouni_sofiane  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  monday 14.00 h  |  analyse_donnees (session 1)  |  Amphi-f_rt  |  Prof: arbi_adnen  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  friday 9.75 h  |  developpement_javaEE (session 1)  |  Amphi-f_rt  |  Prof: ben_yahia_saloua  |  Salle r1 (projector, bat.b1)  |  Cap: 120  |  8/h
+  tuesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g5  |  Prof: taktak_hajer  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  friday 11.50 h  |  tp_developpement_javaEE (session 1)  |  Groupe-g5  |  Prof: ben_yahia_saloua  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  tuesday 14.00 h  |  tp_admin_bases_donnees (session 1)  |  Groupe-g5  |  Prof: mami_imen  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  friday 15.75 h  |  tp_signaux_systemes (session 1)  |  Groupe-g5  |  Prof: amara_boujemaa_rim  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  friday 14.00 h  |  tp_analyse_numerique (session 1)  |  Groupe-g5  |  Prof: khayat_feten  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  friday 8.00 h  |  tp_securite_reseaux (session 1)  |  Groupe-g5  |  Prof: loukil_adlene  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  thursday 11.50 h  |  tp_admin_surveillance_reseaux (session 1)  |  Groupe-g5  |  Prof: ouni_sofiane  |  Salle r11 (lab, bat.b1)  |  Cap: 22  |  11/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g5  |  Prof: bichiou_imene  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 11.50 h  |  admin_bases_donnees (session 1)  |  Groupe-g5  |  Prof: mami_imen  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 8.00 h  |  signaux_systemes (session 1)  |  Groupe-g5  |  Prof: amara_boujemaa_rim  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  wednesday 11.50 h  |  analyse_numerique (session 1)  |  Groupe-g5  |  Prof: arbi_adnen  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 11.50 h  |  logique (session 1)  |  Groupe-g5  |  Prof: mosbahi_olfa  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 9.75 h  |  reseaux_radiomobiles (session 1)  |  Groupe-g5  |  Prof: afif_meryem  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g5  |  Prof: ben_gamra_imene  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 8.00 h  |  ingenierie_protocoles (session 1)  |  Groupe-g5  |  Prof: karoui_kamel  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  thursday 9.75 h  |  securite_reseaux (session 1)  |  Groupe-g5  |  Prof: loukil_adlene  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 8.00 h  |  processus_stochastiques (session 1)  |  Groupe-g5  |  Prof: toumi_salwa  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g5  |  Prof: zanina_wiem  |  Salle r12 (projector, bat.b1)  |  Cap: 30  |  5/h
+  tuesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g4  |  Prof: taktak_hajer  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 11.50 h  |  tp_developpement_javaEE (session 1)  |  Groupe-g4  |  Prof: ben_yahia_saloua  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  tuesday 14.00 h  |  tp_admin_bases_donnees (session 1)  |  Groupe-g4  |  Prof: mami_imen  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 15.75 h  |  tp_signaux_systemes (session 1)  |  Groupe-g4  |  Prof: amara_boujemaa_rim  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 14.00 h  |  tp_analyse_numerique (session 1)  |  Groupe-g4  |  Prof: khayat_feten  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  friday 8.00 h  |  tp_securite_reseaux (session 1)  |  Groupe-g4  |  Prof: loukil_adlene  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  thursday 11.50 h  |  tp_admin_surveillance_reseaux (session 1)  |  Groupe-g4  |  Prof: ouni_sofiane  |  Salle r7 (lab, bat.b1)  |  Cap: 25  |  11/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g4  |  Prof: bichiou_imene  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 11.50 h  |  admin_bases_donnees (session 1)  |  Groupe-g4  |  Prof: mami_imen  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 8.00 h  |  signaux_systemes (session 1)  |  Groupe-g4  |  Prof: amara_boujemaa_rim  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 11.50 h  |  analyse_numerique (session 1)  |  Groupe-g4  |  Prof: arbi_adnen  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 11.50 h  |  logique (session 1)  |  Groupe-g4  |  Prof: mosbahi_olfa  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 9.75 h  |  reseaux_radiomobiles (session 1)  |  Groupe-g4  |  Prof: afif_meryem  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g4  |  Prof: ben_gamra_imene  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 8.00 h  |  ingenierie_protocoles (session 1)  |  Groupe-g4  |  Prof: karoui_kamel  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  thursday 9.75 h  |  securite_reseaux (session 1)  |  Groupe-g4  |  Prof: loukil_adlene  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 8.00 h  |  processus_stochastiques (session 1)  |  Groupe-g4  |  Prof: toumi_salwa  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g4  |  Prof: zanina_wiem  |  Salle r8 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 15.75 h  |  projet_personnel_professionnel (session 1)  |  Groupe-g15  |  Prof: taktak_hajer  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 11.50 h  |  tp_developpement_javaEE (session 1)  |  Groupe-g15  |  Prof: ben_yahia_saloua  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  tuesday 14.00 h  |  tp_admin_bases_donnees (session 1)  |  Groupe-g15  |  Prof: mami_imen  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 15.75 h  |  tp_signaux_systemes (session 1)  |  Groupe-g15  |  Prof: amara_boujemaa_rim  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 14.00 h  |  tp_analyse_numerique (session 1)  |  Groupe-g15  |  Prof: khayat_feten  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  friday 8.00 h  |  tp_securite_reseaux (session 1)  |  Groupe-g15  |  Prof: loukil_adlene  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  thursday 11.50 h  |  tp_admin_surveillance_reseaux (session 1)  |  Groupe-g15  |  Prof: ouni_sofiane  |  Salle r56 (lab, bat.b1)  |  Cap: 25  |  9/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g15  |  Prof: bichiou_imene  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 11.50 h  |  admin_bases_donnees (session 1)  |  Groupe-g15  |  Prof: mami_imen  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 8.00 h  |  signaux_systemes (session 1)  |  Groupe-g15  |  Prof: amara_boujemaa_rim  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  wednesday 11.50 h  |  analyse_numerique (session 1)  |  Groupe-g15  |  Prof: arbi_adnen  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 11.50 h  |  logique (session 1)  |  Groupe-g15  |  Prof: mosbahi_olfa  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 9.75 h  |  reseaux_radiomobiles (session 1)  |  Groupe-g15  |  Prof: afif_meryem  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g15  |  Prof: ben_gamra_imene  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 8.00 h  |  ingenierie_protocoles (session 1)  |  Groupe-g15  |  Prof: karoui_kamel  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  thursday 9.75 h  |  securite_reseaux (session 1)  |  Groupe-g15  |  Prof: loukil_adlene  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  tuesday 8.00 h  |  processus_stochastiques (session 1)  |  Groupe-g15  |  Prof: toumi_salwa  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g15  |  Prof: zanina_wiem  |  Salle r55 (projector, bat.b1)  |  Cap: 28  |  5/h
+
+>>> Filière : Biologie (f_bio) <<<
+  tuesday 11.50 h  |  securite_hygiene (session 1)  |  Amphi-f_bio  |  Prof: abderabba_nadia  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  tuesday 9.75 h  |  commerce_international (session 1)  |  Amphi-f_bio  |  Prof: belaid_hend  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  monday 11.50 h  |  genie_enzymatique (session 1)  |  Amphi-f_bio  |  Prof: gargouri_mohamed  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  monday 8.00 h  |  biotechnologie_vegetale (session 1)  |  Amphi-f_bio  |  Prof: zaouali_yosr  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  friday 9.75 h  |  tp_analyses_spectroscopie (session 1)  |  Groupe-g7  |  Prof: abidi_ferid  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  wednesday 11.50 h  |  tp_genie_enzymatique (session 1)  |  Groupe-g7  |  Prof: gargouri_mohamed  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  thursday 11.50 h  |  tp_analyses_chimiques (session 1)  |  Groupe-g7  |  Prof: hellal_faysal  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  thursday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g7  |  Prof: kaddech_slim  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  tuesday 8.00 h  |  tp_biotechnologie_vegetale (session 1)  |  Groupe-g7  |  Prof: zaouali_yosr  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  friday 8.00 h  |  analyses_physiques_spectro (session 1)  |  Groupe-g7  |  Prof: abidi_ferid  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 15.75 h  |  operations_unitaires (session 1)  |  Groupe-g7  |  Prof: abdimoumen_souhir  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 14.00 h  |  analyses_chimiques (session 1)  |  Groupe-g7  |  Prof: hellal_faysal  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g7  |  Prof: arbi_adnen  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  wednesday 9.75 h  |  chimie_organique_industrielle (session 1)  |  Groupe-g7  |  Prof: taib_saied  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  thursday 8.00 h  |  transfert_matiere (session 1)  |  Groupe-g7  |  Prof: kaddech_slim  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 14.00 h  |  analyse_sociologique_org (session 1)  |  Groupe-g7  |  Prof: jouini_maher  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g7  |  Prof: kaddech_slim  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  wednesday 8.00 h  |  genie_fermentaire (session 1)  |  Groupe-g7  |  Prof: hamdi_mokhtar  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  friday 9.75 h  |  tp_analyses_spectroscopie (session 1)  |  Groupe-g6  |  Prof: abidi_ferid  |  Salle r18 (lab, bat.b2)  |  Cap: 20  |  9/h
+  wednesday 11.50 h  |  tp_genie_enzymatique (session 1)  |  Groupe-g6  |  Prof: gargouri_mohamed  |  Salle r18 (lab, bat.b2)  |  Cap: 20  |  9/h
+  thursday 11.50 h  |  tp_analyses_chimiques (session 1)  |  Groupe-g6  |  Prof: hellal_faysal  |  Salle r18 (lab, bat.b2)  |  Cap: 20  |  9/h
+  thursday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g6  |  Prof: kaddech_slim  |  Salle r18 (lab, bat.b2)  |  Cap: 20  |  9/h
+  tuesday 8.00 h  |  tp_biotechnologie_vegetale (session 1)  |  Groupe-g6  |  Prof: zaouali_yosr  |  Salle r18 (lab, bat.b2)  |  Cap: 20  |  9/h
+  friday 8.00 h  |  analyses_physiques_spectro (session 1)  |  Groupe-g6  |  Prof: abidi_ferid  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 15.75 h  |  operations_unitaires (session 1)  |  Groupe-g6  |  Prof: abdimoumen_souhir  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 14.00 h  |  analyses_chimiques (session 1)  |  Groupe-g6  |  Prof: hellal_faysal  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g6  |  Prof: arbi_adnen  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  wednesday 9.75 h  |  chimie_organique_industrielle (session 1)  |  Groupe-g6  |  Prof: taib_saied  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  thursday 8.00 h  |  transfert_matiere (session 1)  |  Groupe-g6  |  Prof: kaddech_slim  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 14.00 h  |  analyse_sociologique_org (session 1)  |  Groupe-g6  |  Prof: jouini_maher  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g6  |  Prof: kaddech_slim  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  wednesday 8.00 h  |  genie_fermentaire (session 1)  |  Groupe-g6  |  Prof: hamdi_mokhtar  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  friday 9.75 h  |  tp_analyses_spectroscopie (session 1)  |  Groupe-g16  |  Prof: abidi_ferid  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  wednesday 11.50 h  |  tp_genie_enzymatique (session 1)  |  Groupe-g16  |  Prof: gargouri_mohamed  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  thursday 11.50 h  |  tp_analyses_chimiques (session 1)  |  Groupe-g16  |  Prof: hellal_faysal  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  thursday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g16  |  Prof: kaddech_slim  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  tuesday 8.00 h  |  tp_biotechnologie_vegetale (session 1)  |  Groupe-g16  |  Prof: zaouali_yosr  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  friday 8.00 h  |  analyses_physiques_spectro (session 1)  |  Groupe-g16  |  Prof: abidi_ferid  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  tuesday 15.75 h  |  operations_unitaires (session 1)  |  Groupe-g16  |  Prof: abdimoumen_souhir  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  tuesday 14.00 h  |  analyses_chimiques (session 1)  |  Groupe-g16  |  Prof: hellal_faysal  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 15.75 h  |  analyse_numerique (session 1)  |  Groupe-g16  |  Prof: arbi_adnen  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  wednesday 9.75 h  |  chimie_organique_industrielle (session 1)  |  Groupe-g16  |  Prof: taib_saied  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  thursday 8.00 h  |  transfert_matiere (session 1)  |  Groupe-g16  |  Prof: kaddech_slim  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 14.00 h  |  analyse_sociologique_org (session 1)  |  Groupe-g16  |  Prof: jouini_maher  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g16  |  Prof: kaddech_slim  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  wednesday 8.00 h  |  genie_fermentaire (session 1)  |  Groupe-g16  |  Prof: hamdi_mokhtar  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+
+>>> Filière : Chimie (f_ch) <<<
+  monday 15.75 h  |  marketing (session 1)  |  Amphi-f_ch  |  Prof: ben_gamra_imene  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  wednesday 14.00 h  |  tp_traitement_eaux (session 1)  |  Groupe-g9  |  Prof: monser_lotfi  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  saturday 11.50 h  |  tp_strategie_synthese (session 1)  |  Groupe-g9  |  Prof: gatri_rafik  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  saturday 9.75 h  |  tp_etats_matiere (session 1)  |  Groupe-g9  |  Prof: alma_mejri  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  saturday 8.00 h  |  tp_methodes_separation (session 1)  |  Groupe-g9  |  Prof: touj_nedra  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  friday 15.75 h  |  tp_methodes_numeriques (session 1)  |  Groupe-g9  |  Prof: khayat_feten  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  friday 8.00 h  |  tp_autom_regul_capteurs (session 1)  |  Groupe-g9  |  Prof: chatti_abderrazak  |  Salle r25 (lab, bat.b2)  |  Cap: 21  |  9/h
+  wednesday 11.50 h  |  methodes_separation (session 1)  |  Groupe-g9  |  Prof: belgaied_jameleddine  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 14.00 h  |  arabe (session 1)  |  Groupe-g9  |  Prof: basti_ilhem  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g9  |  Prof: bichiou_imene  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  wednesday 8.00 h  |  autom_regul_capteurs (session 1)  |  Groupe-g9  |  Prof: chatti_abderrazak  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  thursday 8.00 h  |  traitement_eaux (session 1)  |  Groupe-g9  |  Prof: monser_lotfi  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g9  |  Prof: sfaxi_mourad  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 9.75 h  |  etats_matiere (session 1)  |  Groupe-g9  |  Prof: alma_mejri  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 8.00 h  |  methodes_numeriques (session 1)  |  Groupe-g9  |  Prof: khayat_feten  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 8.00 h  |  gestion_traitement_dechets (session 1)  |  Groupe-g9  |  Prof: bouallegui_hassib  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 14.00 h  |  electrochimie (session 1)  |  Groupe-g9  |  Prof: bellakhal_nizar  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  monday 11.50 h  |  strategie_synthese (session 1)  |  Groupe-g9  |  Prof: gatri_rafik  |  Salle r59 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g9  |  Prof: zanina_wiem  |  Salle r24 (projector, bat.b2)  |  Cap: 36  |  5/h
+  saturday 9.75 h  |  tp_traitement_eaux (session 1)  |  Groupe-g8  |  Prof: monser_lotfi  |  Salle r23 (lab, bat.b2)  |  Cap: 24  |  10/h
+  thursday 14.00 h  |  tp_strategie_synthese (session 1)  |  Groupe-g8  |  Prof: gatri_rafik  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  saturday 8.00 h  |  tp_etats_matiere (session 1)  |  Groupe-g8  |  Prof: alma_mejri  |  Salle r23 (lab, bat.b2)  |  Cap: 24  |  10/h
+  thursday 11.50 h  |  tp_methodes_separation (session 1)  |  Groupe-g8  |  Prof: touj_nedra  |  Salle r23 (lab, bat.b2)  |  Cap: 24  |  10/h
+  thursday 9.75 h  |  tp_methodes_numeriques (session 1)  |  Groupe-g8  |  Prof: khayat_feten  |  Salle r23 (lab, bat.b2)  |  Cap: 24  |  10/h
+  friday 8.00 h  |  tp_autom_regul_capteurs (session 1)  |  Groupe-g8  |  Prof: chatti_abderrazak  |  Salle r23 (lab, bat.b2)  |  Cap: 24  |  10/h
+  wednesday 11.50 h  |  methodes_separation (session 1)  |  Groupe-g8  |  Prof: belgaied_jameleddine  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 14.00 h  |  arabe (session 1)  |  Groupe-g8  |  Prof: basti_ilhem  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g8  |  Prof: bichiou_imene  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  wednesday 8.00 h  |  autom_regul_capteurs (session 1)  |  Groupe-g8  |  Prof: chatti_abderrazak  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  thursday 8.00 h  |  traitement_eaux (session 1)  |  Groupe-g8  |  Prof: monser_lotfi  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g8  |  Prof: sfaxi_mourad  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 9.75 h  |  etats_matiere (session 1)  |  Groupe-g8  |  Prof: alma_mejri  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  tuesday 8.00 h  |  methodes_numeriques (session 1)  |  Groupe-g8  |  Prof: khayat_feten  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 8.00 h  |  gestion_traitement_dechets (session 1)  |  Groupe-g8  |  Prof: bouallegui_hassib  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 14.00 h  |  electrochimie (session 1)  |  Groupe-g8  |  Prof: bellakhal_nizar  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  monday 11.50 h  |  strategie_synthese (session 1)  |  Groupe-g8  |  Prof: gatri_rafik  |  Salle r22 (projector, bat.b2)  |  Cap: 28  |  4/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g8  |  Prof: zanina_wiem  |  Salle r20 (projector, bat.b2)  |  Cap: 32  |  4/h
+  saturday 9.75 h  |  tp_traitement_eaux (session 1)  |  Groupe-g17  |  Prof: monser_lotfi  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  thursday 14.00 h  |  tp_strategie_synthese (session 1)  |  Groupe-g17  |  Prof: gatri_rafik  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  saturday 8.00 h  |  tp_etats_matiere (session 1)  |  Groupe-g17  |  Prof: alma_mejri  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  thursday 11.50 h  |  tp_methodes_separation (session 1)  |  Groupe-g17  |  Prof: touj_nedra  |  Salle r60 (lab, bat.b2)  |  Cap: 22  |  9/h
+  thursday 9.75 h  |  tp_methodes_numeriques (session 1)  |  Groupe-g17  |  Prof: khayat_feten  |  Salle r60 (lab, bat.b2)  |  Cap: 22  |  9/h
+  friday 8.00 h  |  tp_autom_regul_capteurs (session 1)  |  Groupe-g17  |  Prof: chatti_abderrazak  |  Salle r21 (lab, bat.b2)  |  Cap: 22  |  10/h
+  wednesday 11.50 h  |  methodes_separation (session 1)  |  Groupe-g17  |  Prof: belgaied_jameleddine  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  tuesday 14.00 h  |  arabe (session 1)  |  Groupe-g17  |  Prof: basti_ilhem  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+  wednesday 9.75 h  |  anglais (session 1)  |  Groupe-g17  |  Prof: bichiou_imene  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+  wednesday 8.00 h  |  autom_regul_capteurs (session 1)  |  Groupe-g17  |  Prof: chatti_abderrazak  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+  thursday 8.00 h  |  traitement_eaux (session 1)  |  Groupe-g17  |  Prof: monser_lotfi  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+  tuesday 11.50 h  |  optimisation (session 1)  |  Groupe-g17  |  Prof: sfaxi_mourad  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  tuesday 9.75 h  |  etats_matiere (session 1)  |  Groupe-g17  |  Prof: alma_mejri  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  tuesday 8.00 h  |  methodes_numeriques (session 1)  |  Groupe-g17  |  Prof: khayat_feten  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 8.00 h  |  gestion_traitement_dechets (session 1)  |  Groupe-g17  |  Prof: bouallegui_hassib  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 14.00 h  |  electrochimie (session 1)  |  Groupe-g17  |  Prof: bellakhal_nizar  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+  monday 11.50 h  |  strategie_synthese (session 1)  |  Groupe-g17  |  Prof: gatri_rafik  |  Salle r17 (projector, bat.b2)  |  Cap: 25  |  4/h
+  monday 9.75 h  |  francais (session 1)  |  Groupe-g17  |  Prof: zanina_wiem  |  Salle r57 (projector, bat.b2)  |  Cap: 30  |  4/h
+
+>>> Filière : Informatique et Intelligence Artificielle (f_iia) <<<
+  monday 14.00 h  |  tech_acquisition_commande_if (session 1)  |  Amphi-f_iia  |  Prof: braham_ahmed  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  monday 9.75 h  |  management_qualite_perf_ind (session 1)  |  Amphi-f_iia  |  Prof: ben_romdhane_taib  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  tuesday 15.75 h  |  tp_tech_acquisition_commande (session 1)  |  Groupe-g11  |  Prof: braham_ahmed  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  friday 9.75 h  |  tp_modelisation_ident_estim (session 1)  |  Groupe-g11  |  Prof: aloui_ridha  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  saturday 9.75 h  |  tp_architecture_avancee (session 1)  |  Groupe-g11  |  Prof: bellamine_med_sahbi  |  Salle r32 (lab, bat.b3)  |  Cap: 30  |  9/h
+  wednesday 14.00 h  |  tp_conception_syst_mecaniques (session 1)  |  Groupe-g11  |  Prof: sakhraoui_amir  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  friday 8.00 h  |  tp_bases_donnees (session 1)  |  Groupe-g11  |  Prof: ben_said_salma  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  saturday 8.00 h  |  tp_automatismes_industriels (session 1)  |  Groupe-g11  |  Prof: ghezail_feiza  |  Salle r52 (lab, bat.b3)  |  Cap: 30  |  9/h
+  tuesday 14.00 h  |  tp_programmation_c_cpp (session 1)  |  Groupe-g11  |  Prof: taktak_hajer  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  thursday 9.75 h  |  tp_recherche_operationnelle (session 1)  |  Groupe-g11  |  Prof: harbaoui_imen  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  tuesday 9.75 h  |  anglais (session 1)  |  Groupe-g11  |  Prof: bichiou_imene  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  wednesday 9.75 h  |  modelisation_identification (session 1)  |  Groupe-g11  |  Prof: aloui_ridha  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  tuesday 8.00 h  |  architecture_avancee_proc (session 1)  |  Groupe-g11  |  Prof: bellamine_med_sahbi  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g11  |  Prof: zanina_wiem  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  wednesday 11.50 h  |  regulation_industrielle (session 1)  |  Groupe-g11  |  Prof: gasmi_moncef  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g11  |  Prof: ben_gamra_imene  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  thursday 8.00 h  |  bases_donnees (session 1)  |  Groupe-g11  |  Prof: ben_said_salma  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  monday 11.50 h  |  conception_syst_mecaniques (session 1)  |  Groupe-g11  |  Prof: skander_achref  |  Salle r43 (projector, bat.b4)  |  Cap: 50  |  8/h
+  monday 8.00 h  |  automatismes_industriels (session 1)  |  Groupe-g11  |  Prof: ghezail_feiza  |  Salle r43 (projector, bat.b4)  |  Cap: 50  |  8/h
+  wednesday 8.00 h  |  recherche_operationnelle (session 1)  |  Groupe-g11  |  Prof: harbaoui_imen  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  tuesday 15.75 h  |  tp_tech_acquisition_commande (session 1)  |  Groupe-g10  |  Prof: braham_ahmed  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  friday 9.75 h  |  tp_modelisation_ident_estim (session 1)  |  Groupe-g10  |  Prof: aloui_ridha  |  Salle r62 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 11.50 h  |  tp_architecture_avancee (session 1)  |  Groupe-g10  |  Prof: bellamine_med_sahbi  |  Salle r44 (lab, bat.b4)  |  Cap: 45  |  12/h
+  wednesday 14.00 h  |  tp_conception_syst_mecaniques (session 1)  |  Groupe-g10  |  Prof: sakhraoui_amir  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  friday 8.00 h  |  tp_bases_donnees (session 1)  |  Groupe-g10  |  Prof: ben_said_salma  |  Salle r62 (lab, bat.b3)  |  Cap: 25  |  8/h
+  saturday 8.00 h  |  tp_automatismes_industriels (session 1)  |  Groupe-g10  |  Prof: ghezail_feiza  |  Salle r62 (lab, bat.b3)  |  Cap: 25  |  8/h
+  tuesday 14.00 h  |  tp_programmation_c_cpp (session 1)  |  Groupe-g10  |  Prof: taktak_hajer  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  thursday 9.75 h  |  tp_recherche_operationnelle (session 1)  |  Groupe-g10  |  Prof: harbaoui_imen  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  tuesday 9.75 h  |  anglais (session 1)  |  Groupe-g10  |  Prof: bichiou_imene  |  Salle r49 (projector, bat.b3)  |  Cap: 30  |  6/h
+  wednesday 9.75 h  |  modelisation_identification (session 1)  |  Groupe-g10  |  Prof: aloui_ridha  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  tuesday 8.00 h  |  architecture_avancee_proc (session 1)  |  Groupe-g10  |  Prof: bellamine_med_sahbi  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g10  |  Prof: zanina_wiem  |  Salle r49 (projector, bat.b3)  |  Cap: 30  |  6/h
+  wednesday 11.50 h  |  regulation_industrielle (session 1)  |  Groupe-g10  |  Prof: gasmi_moncef  |  Salle r49 (projector, bat.b3)  |  Cap: 30  |  6/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g10  |  Prof: ben_gamra_imene  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  thursday 8.00 h  |  bases_donnees (session 1)  |  Groupe-g10  |  Prof: ben_said_salma  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  monday 11.50 h  |  conception_syst_mecaniques (session 1)  |  Groupe-g10  |  Prof: skander_achref  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  monday 8.00 h  |  automatismes_industriels (session 1)  |  Groupe-g10  |  Prof: ghezail_feiza  |  Salle r47 (projector, bat.b4)  |  Cap: 42  |  7/h
+  wednesday 8.00 h  |  recherche_operationnelle (session 1)  |  Groupe-g10  |  Prof: harbaoui_imen  |  Salle r49 (projector, bat.b3)  |  Cap: 30  |  6/h
+  tuesday 15.75 h  |  tp_tech_acquisition_commande (session 1)  |  Groupe-g18  |  Prof: braham_ahmed  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  friday 9.75 h  |  tp_modelisation_ident_estim (session 1)  |  Groupe-g18  |  Prof: aloui_ridha  |  Salle r32 (lab, bat.b3)  |  Cap: 30  |  9/h
+  thursday 11.50 h  |  tp_architecture_avancee (session 1)  |  Groupe-g18  |  Prof: bellamine_med_sahbi  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  wednesday 14.00 h  |  tp_conception_syst_mecaniques (session 1)  |  Groupe-g18  |  Prof: sakhraoui_amir  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  friday 8.00 h  |  tp_bases_donnees (session 1)  |  Groupe-g18  |  Prof: ben_said_salma  |  Salle r32 (lab, bat.b3)  |  Cap: 30  |  9/h
+  saturday 8.00 h  |  tp_automatismes_industriels (session 1)  |  Groupe-g18  |  Prof: ghezail_feiza  |  Salle r32 (lab, bat.b3)  |  Cap: 30  |  9/h
+  tuesday 14.00 h  |  tp_programmation_c_cpp (session 1)  |  Groupe-g18  |  Prof: taktak_hajer  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  thursday 9.75 h  |  tp_recherche_operationnelle (session 1)  |  Groupe-g18  |  Prof: harbaoui_imen  |  Salle r32 (lab, bat.b3)  |  Cap: 30  |  9/h
+  tuesday 9.75 h  |  anglais (session 1)  |  Groupe-g18  |  Prof: bichiou_imene  |  Salle r63 (projector, bat.b3)  |  Cap: 28  |  6/h
+  wednesday 9.75 h  |  modelisation_identification (session 1)  |  Groupe-g18  |  Prof: aloui_ridha  |  Salle r63 (projector, bat.b3)  |  Cap: 28  |  6/h
+  tuesday 8.00 h  |  architecture_avancee_proc (session 1)  |  Groupe-g18  |  Prof: bellamine_med_sahbi  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g18  |  Prof: zanina_wiem  |  Salle r63 (projector, bat.b3)  |  Cap: 28  |  6/h
+  wednesday 11.50 h  |  regulation_industrielle (session 1)  |  Groupe-g18  |  Prof: gasmi_moncef  |  Salle r63 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 15.75 h  |  marketing (session 1)  |  Groupe-g18  |  Prof: ben_gamra_imene  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  thursday 8.00 h  |  bases_donnees (session 1)  |  Groupe-g18  |  Prof: ben_said_salma  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  monday 11.50 h  |  conception_syst_mecaniques (session 1)  |  Groupe-g18  |  Prof: skander_achref  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  monday 8.00 h  |  automatismes_industriels (session 1)  |  Groupe-g18  |  Prof: ghezail_feiza  |  Salle r45 (projector, bat.b4)  |  Cap: 40  |  7/h
+  wednesday 8.00 h  |  recherche_operationnelle (session 1)  |  Groupe-g18  |  Prof: harbaoui_imen  |  Salle r63 (projector, bat.b3)  |  Cap: 28  |  6/h
+
+>>> Filière : Informatique et MathÃ©matiques Informatiques (f_imi) <<<
+  tuesday 8.00 h  |  reseaux_informatiques (session 1)  |  Amphi-f_imi  |  Prof: kammoun_najeh  |  Salle r41 (projector, bat.b4)  |  Cap: 80  |  7/h
+  monday 15.75 h  |  tp_gpao (session 1)  |  Groupe-g19  |  Prof: bohli_nadra  |  Salle r46 (lab, bat.b4)  |  Cap: 35  |  10/h
+  thursday 11.50 h  |  tp_micro_controleurs_dsp (session 1)  |  Groupe-g19  |  Prof: kammoun_najeh  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  friday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g19  |  Prof: kaddech_slim  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  saturday 9.75 h  |  tp_thermique_industrielle (session 1)  |  Groupe-g19  |  Prof: hfaidh_imen  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  saturday 8.00 h  |  tp_gmao (session 1)  |  Groupe-g19  |  Prof: ben_romdhane_taib  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 9.75 h  |  tp_traitement_signal (session 1)  |  Groupe-g19  |  Prof: yacoub_slim  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 8.00 h  |  tp_instrumentations_optiques (session 1)  |  Groupe-g19  |  Prof: hfaidh_imen  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  friday 8.00 h  |  tp_thermodynamique (session 1)  |  Groupe-g19  |  Prof: zaghdoudi_med_chaker  |  Salle r51 (lab, bat.b3)  |  Cap: 25  |  8/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g19  |  Prof: zanina_wiem  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g19  |  Prof: ben_gamra_imene  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  wednesday 11.50 h  |  micro_controleurs_dsp (session 1)  |  Groupe-g19  |  Prof: yacoub_slim  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  wednesday 9.75 h  |  thermique_industrielle (session 1)  |  Groupe-g19  |  Prof: zaghdoudi_med_chaker  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  wednesday 8.00 h  |  traitement_numerique_signal (session 1)  |  Groupe-g19  |  Prof: yacoub_slim  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g19  |  Prof: kaddech_slim  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 11.50 h  |  gmao (session 1)  |  Groupe-g19  |  Prof: ben_romdhane_taib  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  tuesday 9.75 h  |  instrumentations_optiques (session 1)  |  Groupe-g19  |  Prof: hfaidh_imen  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 8.00 h  |  thermodynamique_appliquee (session 1)  |  Groupe-g19  |  Prof: zaghdoudi_med_chaker  |  Salle r50 (projector, bat.b3)  |  Cap: 28  |  6/h
+  monday 15.75 h  |  tp_gpao (session 1)  |  Groupe-g13  |  Prof: bohli_nadra  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  thursday 11.50 h  |  tp_micro_controleurs_dsp (session 1)  |  Groupe-g13  |  Prof: kammoun_najeh  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  friday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g13  |  Prof: kaddech_slim  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  saturday 9.75 h  |  tp_thermique_industrielle (session 1)  |  Groupe-g13  |  Prof: hfaidh_imen  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  saturday 8.00 h  |  tp_gmao (session 1)  |  Groupe-g13  |  Prof: ben_romdhane_taib  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  thursday 9.75 h  |  tp_traitement_signal (session 1)  |  Groupe-g13  |  Prof: yacoub_slim  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  thursday 8.00 h  |  tp_instrumentations_optiques (session 1)  |  Groupe-g13  |  Prof: hfaidh_imen  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  friday 8.00 h  |  tp_thermodynamique (session 1)  |  Groupe-g13  |  Prof: zaghdoudi_med_chaker  |  Salle r64 (lab, bat.b3)  |  Cap: 26  |  9/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g13  |  Prof: zanina_wiem  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g13  |  Prof: ben_gamra_imene  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  wednesday 11.50 h  |  micro_controleurs_dsp (session 1)  |  Groupe-g13  |  Prof: yacoub_slim  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  wednesday 9.75 h  |  thermique_industrielle (session 1)  |  Groupe-g13  |  Prof: zaghdoudi_med_chaker  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  wednesday 8.00 h  |  traitement_numerique_signal (session 1)  |  Groupe-g13  |  Prof: yacoub_slim  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g13  |  Prof: kaddech_slim  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  monday 11.50 h  |  gmao (session 1)  |  Groupe-g13  |  Prof: ben_romdhane_taib  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  tuesday 9.75 h  |  instrumentations_optiques (session 1)  |  Groupe-g13  |  Prof: hfaidh_imen  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  monday 8.00 h  |  thermodynamique_appliquee (session 1)  |  Groupe-g13  |  Prof: zaghdoudi_med_chaker  |  Salle r33 (projector, bat.b3)  |  Cap: 28  |  5/h
+  monday 15.75 h  |  tp_gpao (session 1)  |  Groupe-g12  |  Prof: bohli_nadra  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 11.50 h  |  tp_micro_controleurs_dsp (session 1)  |  Groupe-g12  |  Prof: kammoun_najeh  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  friday 9.75 h  |  tp_mecanique_fluides (session 1)  |  Groupe-g12  |  Prof: kaddech_slim  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  saturday 9.75 h  |  tp_thermique_industrielle (session 1)  |  Groupe-g12  |  Prof: hfaidh_imen  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  saturday 8.00 h  |  tp_gmao (session 1)  |  Groupe-g12  |  Prof: ben_romdhane_taib  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 9.75 h  |  tp_traitement_signal (session 1)  |  Groupe-g12  |  Prof: yacoub_slim  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  thursday 8.00 h  |  tp_instrumentations_optiques (session 1)  |  Groupe-g12  |  Prof: hfaidh_imen  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  friday 8.00 h  |  tp_thermodynamique (session 1)  |  Groupe-g12  |  Prof: zaghdoudi_med_chaker  |  Salle r30 (lab, bat.b3)  |  Cap: 25  |  8/h
+  tuesday 11.50 h  |  francais (session 1)  |  Groupe-g12  |  Prof: zanina_wiem  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  monday 14.00 h  |  marketing (session 1)  |  Groupe-g12  |  Prof: ben_gamra_imene  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  wednesday 11.50 h  |  micro_controleurs_dsp (session 1)  |  Groupe-g12  |  Prof: yacoub_slim  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  wednesday 9.75 h  |  thermique_industrielle (session 1)  |  Groupe-g12  |  Prof: zaghdoudi_med_chaker  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  wednesday 8.00 h  |  traitement_numerique_signal (session 1)  |  Groupe-g12  |  Prof: yacoub_slim  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  monday 9.75 h  |  mecanique_fluides_thermique (session 1)  |  Groupe-g12  |  Prof: kaddech_slim  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  monday 11.50 h  |  gmao (session 1)  |  Groupe-g12  |  Prof: ben_romdhane_taib  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  tuesday 9.75 h  |  instrumentations_optiques (session 1)  |  Groupe-g12  |  Prof: hfaidh_imen  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h
+  monday 8.00 h  |  thermodynamique_appliquee (session 1)  |  Groupe-g12  |  Prof: zaghdoudi_med_chaker  |  Salle r37 (projector, bat.b3)  |  Cap: 26  |  6/h

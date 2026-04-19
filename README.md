@@ -38,8 +38,8 @@ Organisation en 6 filières d'études:
 2. **f_rt** - Réseaux et Télécommunications
 3. **f_bio** - Biologie
 4. **f_ch** - Chimie
-5. **f_iia** - Informatique et Intelligence Artificielle
-6. **f_imi** - Informatique et Mathématiques Informatiques
+5. **f_iia** -  Informatique Industrielle et Automatique
+6. **f_imi** - Instrumentation et Maintenance Informatiques
 
 Chaque filière possède un bâtiment principal et une ou plusieurs salles dédiées.
 

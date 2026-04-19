@@ -1,70 +1,150 @@
 % ============================================================
-% DISPLAY — Affichage du planning généré
+% DISPLAY — Affichage et Export du planning
 % Projet Logic Programming — GL3 2026
-% Version 2 : support amphi/groupe + filières
 % ============================================================
 :- consult(knowledge_base).
-
+:- consult(energy).
+:- encoding(utf8).
 % ============================================================
-% AFFICHAGE COMPLET DU PLANNING (liste brute)
+% Formatage de la cible (Amphi- ou Groupe-)
 % ============================================================
-print_schedule([]) :-
-    format("~n=== Fin du planning ===~n").
-print_schedule([session(Task, Room, Time)|Rest]) :-
-    Task = task(Course, SessionIdx, Mode, TargetID),
-    timeslot(Time, Day, Hour),
-    room(Room, _, Equip, Building, Cost),
-    course(Course, _, Duration, _, _, _),
-    format_target(Mode, TargetID, TargetLabel),
-    format("~w | Session ~w | ~w | Salle ~w (~w, bat.~w) | ~w ~wh | Duree: ~w slot(s) | Energie/h: ~w~n",
-           [Course, SessionIdx, TargetLabel, Room, Equip, Building, Day, Hour, Duration, Cost]),
-    print_schedule(Rest).
-
-% Formate l'étiquette cible selon le mode
 format_target(filiere, FiliereID, Label) :-
     atomic_list_concat(['Amphi-', FiliereID], Label).
 format_target(groupe, GroupID, Label) :-
     atomic_list_concat(['Groupe-', GroupID], Label).
 
 % ============================================================
-% AFFICHAGE PAR JOUR
+% Récupérer le nom du professeur
 % ============================================================
-print_schedule_by_day(Schedule) :-
-    format("~n========================================~n"),
-    format("         PLANNING HEBDOMADAIRE~n"),
-    format("========================================~n"),
-    forall(
-        member(Day, [monday, tuesday, wednesday, thursday, friday]),
-        print_day(Schedule, Day)
-    ).
+get_instructor_name(Course, ProfName) :-
+    instructor(_, ProfName, Course), !.
 
-print_day(Schedule, Day) :-
-    format("~n--- ~w ---~n", [Day]),
-    findall(T, timeslot(T, Day, _), Slots),
-    forall(member(Time, Slots), print_slot(Schedule, Day, Time)).
-
-print_slot(Schedule, Day, Time) :-
-    timeslot(Time, Day, Hour),
-    findall(
-        session(Task, Room, Time),
-        member(session(Task, Room, Time), Schedule),
-        Sessions
-    ),
-    ( Sessions = []
-      -> true
-      ;  format("  ~wh:~n", [Hour]),
-         forall(member(S, Sessions), print_session_detail(S))
-    ).
-
+% ============================================================
+% AFFICHAGE PAR FILIÈRE (utilisé dans lexport)
+% ============================================================
 print_session_detail(session(Task, Room, _)) :-
     Task = task(Course, SessionIdx, Mode, TargetID),
     room(Room, Cap, Equip, Building, _),
     format_target(Mode, TargetID, TargetLabel),
-    format("      ~w (session ~w) | ~w | Salle ~w [~w, cap:~w, bat:~w]~n",
-           [Course, SessionIdx, TargetLabel, Room, Equip, Cap, Building]).
+    get_instructor_name(Course, ProfName),
+    format("      ~w (session ~w) | ~w | Prof: ~w | Salle ~w [~w, cap:~w, bat:~w]~n",
+           [Course, SessionIdx, TargetLabel, ProfName, Room, Equip, Cap, Building]).
 
 % ============================================================
-% AFFICHAGE PAR FILIÈRE
+% STATISTIQUES
+% ============================================================
+% ============================================================
+% STATISTIQUES (version simplifiée sans task_filiere)
+% ============================================================
+print_stats(Schedule) :-
+    length(Schedule, TotalSessions),
+    findall(_, (member(session(task(_, _, filiere, _), _, _), Schedule)), AmphiList),
+    length(AmphiList, NbAmphi),
+    findall(_, (member(session(task(_, _, groupe, _), _, _), Schedule)), GroupeList),
+    length(GroupeList, NbGroupe),
+
+    findall(Cost, (member(session(_, Room, _), Schedule), room(Room, _, _, _, Cost)), Costs),
+    sumlist(Costs, TotalEnergy),
+
+    format("~n=== Statistiques ===~n"),
+    format("Sessions totales  : ~w~n", [TotalSessions]),
+    format("  dont amphi      : ~w~n", [NbAmphi]),
+    format("  dont groupe     : ~w~n", [NbGroupe]),
+    format("Filières couvertes: 6~n", []),
+    format("Energie totale    : ~w unités~n", [TotalEnergy]).
+
+
+% ============================================================
+% EXPORT DU PLANNING (Version finale corrigée)
+% ============================================================
+export_schedule(Schedule, Filename) :-
+    atomic_list_concat(['C:/Users/MSI/Downloads/prolog-milestone1_correction_alla/prolog-milestone1_correction/', Filename], FullPath),
+    open(FullPath, write, Stream, [encoding(utf8)]),
+
+    format(Stream, "========================================~n", []),
+    format(Stream, "         PLANNING UNIVERSITAIRE - GL3 2026~n", []),
+    format(Stream, "         Planning complet généré~n", []),
+    format(Stream, "========================================~n~n", []),
+
+    print_stats_to_stream(Schedule, Stream),
+    
+    print_energy_to_stream(Schedule, Stream),
+
+    format(Stream, "~n========================================~n", []),
+    format(Stream, "         PLANNING DÉTAILLÉ PAR FILIÈRE~n", []),
+    format(Stream, "========================================~n", []),
+
+    forall(filiere(FID, FName),
+        print_filiere_to_stream(Schedule, FID, FName, Stream)),
+
+    close(Stream),
+    format("~n✓ SUCCESS : Planning exporté dans : ~w~n", [FullPath]),
+    format("   → Ouvre le fichier avec Notepad ou VS Code.~n").
+
+print_stats_to_stream(Schedule, Stream) :-
+    length(Schedule, Total),
+    findall(_, member(session(task(_,_,filiere,_),_,_), Schedule), AmphiL),
+    length(AmphiL, NbAmphi),
+    findall(_, member(session(task(_,_,groupe,_),_,_), Schedule), GroupeL),
+    length(GroupeL, NbGroupe),
+
+    format(Stream, "=== STATISTIQUES GLOBALES ===~n", []),
+    format(Stream, "Sessions totales   : ~w~n", [Total]),
+    format(Stream, "  - Amphithéâtres  : ~w~n", [NbAmphi]),
+    format(Stream, "  - Groupes        : ~w~n", [NbGroupe]),
+    format(Stream, "Filières couvertes : 6~n", []),
+    format(Stream, "========================================~n~n", []).
+
+
+% ============================================================
+% EXPORT RAPPORT ÉNERGÉTIQUE
+% ============================================================
+print_energy_to_stream(Schedule, Stream) :-
+    energy_total_campus(Schedule, ETotal),
+    format(Stream, "~n=== RAPPORT ÉNERGÉTIQUE ===~n", []),
+    format(Stream, "Consommation totale campus : ~w unités~n", [ETotal]),
+    format(Stream, "~n  Détail par bâtiment :~n", []),
+    forall(building(BID, MaxE), (
+        energy_building_total(BID, Schedule, BTotal),
+        format(Stream, "  Bat. ~w : ~w unités (seuil/jour : ~w)~n",
+               [BID, BTotal, MaxE]),
+        forall(member(Day, [monday, tuesday, wednesday, thursday, friday, saturday]), (
+            energy_building_day(BID, Day, Schedule, DE),
+            ( DE > 0 ->
+                P is round(DE * 100 / MaxE),
+                format(Stream, "    ~w : ~w (~w%)~n", [Day, DE, P])
+            ; true )
+        ))
+    )),
+    energy_imbalance(Schedule, Imbalance),
+    format(Stream, "~nImbalance journalière max : ~w unités~n", [Imbalance]).
+
+
+print_filiere_to_stream(Schedule, FiliereID, FiliereName, Stream) :-
+    format(Stream, "~n>>> Filière : ~w (~w) <<<~n", [FiliereName, FiliereID]),
+
+    findall(S, (member(S, Schedule), S = session(task(_,_,filiere,FiliereID),_,_)), AmphiS),
+    findall(S, (member(S, Schedule), S = session(task(_,_,groupe,G),_,_), group(G, FiliereID, _)), GroupS),
+
+    append(AmphiS, GroupS, All),
+
+    ( All = [] 
+      -> format(Stream, "  Aucune session pour cette filière.~n", [])
+      ;  forall(member(Session, All), print_session_to_stream(Session, Stream))
+    ).
+
+print_session_to_stream(session(Task, Room, Time), Stream) :-
+    Task = task(Course, SessionIdx, Mode, TargetID),
+    timeslot(Time, Day, Hour),
+    room(Room, Cap, Equip, Building, Cost),
+    format_target(Mode, TargetID, TargetLabel),
+    get_instructor_name(Course, ProfName),
+
+    format(Stream, "  ~w ~2f h  |  ~w (session ~w)  |  ~w  |  Prof: ~w  |  Salle ~w (~w, bat.~w)  |  Cap: ~w  |  ~w/h~n",
+           [Day, Hour, Course, SessionIdx, TargetLabel, ProfName, Room, Equip, Building, Cap, Cost]).
+
+% ============================================================
+% (Optionnel) Affichage console par filière
 % ============================================================
 print_schedule_by_filiere(Schedule) :-
     format("~n========================================~n"),
@@ -74,52 +154,11 @@ print_schedule_by_filiere(Schedule) :-
 
 print_filiere_schedule(Schedule, FiliereID, FiliereName) :-
     format("~n>>> Filière : ~w (~w) <<<~n", [FiliereName, FiliereID]),
-    % Sessions amphi de cette filière
-    findall(
-        session(Task, Room, Time),
-        (member(session(Task, Room, Time), Schedule),
-         Task = task(_, _, filiere, FiliereID)),
-        AmphiSessions
-    ),
-    % Sessions groupe de cette filière
-    findall(
-        session(Task, Room, Time),
-        (member(session(Task, Room, Time), Schedule),
-         Task = task(_, _, groupe, GID),
-         group(GID, FiliereID, _)),
-        GroupSessions
-    ),
-    append(AmphiSessions, GroupSessions, AllSessions),
-    ( AllSessions = []
-      -> format("  (aucune session planifiee)~n")
-      ;  forall(member(S, AllSessions), print_session_detail(S))
+    findall(S, (member(S, Schedule), S = session(task(_,_,filiere,FiliereID),_,_)), AmphiS),
+    findall(S, (member(S, Schedule), S = session(task(_,_,groupe,G),_,_), group(G, FiliereID, _)), GroupS),
+    append(AmphiS, GroupS, All),
+    ( All = [] -> format("  (aucune session)~n")
+    ; forall(member(S, All), print_session_detail(S))
     ).
 
-% ============================================================
-% STATISTIQUES DU PLANNING
-% ============================================================
-print_stats(Schedule) :-
-    length(Schedule, TotalSessions),
-    % Compter les tasks amphi et groupe
-    findall(_, (member(session(task(_, _, filiere, _), _, _), Schedule)), AmphiList),
-    length(AmphiList, NbAmphi),
-    findall(_, (member(session(task(_, _, groupe, _), _, _), Schedule)), GroupeList),
-    length(GroupeList, NbGroupe),
-    % Calculer l'énergie totale consommée
-    findall(Cost,
-        (member(session(_, Room, _), Schedule), room(Room, _, _, _, Cost)),
-        Costs),
-    sumlist(Costs, TotalEnergy),
-    % Nombre de filières couvertes
-    findall(F,
-        (member(session(Task, _, _), Schedule),
-         task_filiere(Task, F)),
-        FList),
-    sort(FList, UniqFilieres),
-    length(UniqFilieres, NbFilieres),
-    format("~n=== Statistiques ===~n"),
-    format("Sessions totales  : ~w~n", [TotalSessions]),
-    format("  dont amphi      : ~w~n", [NbAmphi]),
-    format("  dont groupe     : ~w~n", [NbGroupe]),
-    format("Filières couvertes: ~w~n", [NbFilieres]),
-    format("Energie totale    : ~w unités~n", [TotalEnergy]).
+
