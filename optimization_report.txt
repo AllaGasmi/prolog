@@ -1,0 +1,29 @@
+========================================
+   RAPPORT OPTIMISATION â€” MILESTONE 3
+========================================
+
+FONCTION OBJECTIF
+  Score = 0.5*E_total + 0.3*Imbalance + 0.2*Var(R)
+
+MÃ‰TRIQUES DU MEILLEUR SCHEDULE (filiÃ¨re GL)
+  E_total   : 467.0000 unitÃ©s
+  Imbalance : 124.0000 unitÃ©s
+  Var(R)    : 5.7341
+  Score     : 271.8468
+
+COMPARAISON PAR STRATÃ‰GIE DE POIDS
+  PrioritÃ© Ã©nergie   (w=0.5/0.3/0.2) : 271.8468
+  PrioritÃ© Ã©quilibre (w=0.2/0.5/0.3) : 157.1202
+  PrioritÃ© fairness  (w=0.2/0.2/0.6) : 121.6405
+
+JUSTIFICATION DES POIDS CHOISIS
+  w1=0.5 : critÃ¨re principal â€” rÃ©duction consommation
+  w2=0.3 : Ã©viter surcharge journaliÃ¨re
+  w3=0.2 : Ã©quitÃ© usage des salles
+
+TRADE-OFFS OBSERVÃ‰S
+  Minimiser E_total concentre les sessions dans
+  les salles les moins coÃ»teuses â†’ augmente Var(R).
+  w3=0.2 limite cet effet sans sacrifier l'Ã©nergie.
+  Le dÃ©sÃ©quilibre journalier est liÃ© aux contraintes
+  de disponibilitÃ© des professeurs.

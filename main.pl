@@ -5,12 +5,16 @@
 :- consult(constraints).
 :- consult(scheduler).
 :- consult(display).
+:- consult(analysis).
+:- consult(energy).
+:- consult(optimization).
 :- encoding(utf8).
 
 % ============================================================
 % LANCER LE SYSTÈME
 % ?- run.
 % ============================================================
+
 run :-
     format("~n========================================~n"),
     format("  Système de planification — Milestone 1~n"),
@@ -45,10 +49,36 @@ run :-
     nb_setval(final_schedule, Final),
 
     print_stats(Final),
+
+    print_energy_report(Final),
+
     export_schedule(Final, 'planning.txt'),
 
+    % Affichage d analyse
+    print_building_energy_analysis(Final),
+
+    % Export d analyse détaillée
+    export_analysis(Final, 'analysis.txt'),
+    % ── MILESTONE 3 : Optimisation sur filière GL ────────────
+    format("~n=== PHASE OPTIMISATION (Milestone 3) ===~n"),
+    format("Démonstration sur filière GL (4 groupes)~n~n"),
+    MaxCandidates = 5,
+    generate_candidates(MaxCandidates, Candidates),
+    include([S]>>(S \= []), Candidates, ValidCandidates),
+    ( ValidCandidates \= []
+    -> print_comparison_report(ValidCandidates),
+       best_schedule(ValidCandidates, BestGL),
+       format("~nMeilleur schedule GL sélectionné.~n"),
+       print_optimization_report(BestGL),
+       export_optimization_report(BestGL, 'optimization_report.txt')
+    ;  format("Aucun candidat GL valide — évaluation du planning principal.~n"),
+       print_optimization_report(Final),
+       export_optimization_report(Final, 'optimization_report.txt')
+    ),
+
     format("~nFichier 'planning.txt' créé dans le dossier du projet.~n"),
-    format("Ouvre-le avec Notepad ou VS Code pour tout lire tranquillement.~n").
+    format("Fichier 'analysis.txt' créé pour la compréhension des contraintes.~n"),
+    format("Ouvre-les avec Notepad ou VS Code pour tout lire tranquillement.~n").
 
 % ============================================================
 % PLANIFICATION GROUPE PAR GROUPE

@@ -98,15 +98,22 @@ equipment_ok(Task, Room) :-
     room(Room, _, Equip, _, _).
 
 % ============================================================
-% CONTRAINTE 5 : Instructeur disponible
-% Le créneau doit être dans les disponibilités de l instructeur
+% CONTRAINTE 5 : Instructeur disponible et non en conflit
+% — Le créneau doit être dans les disponibilités de l instructeur
+% — Le professeur ne doit pas enseigner un autre cours au mme créneau
 % On indexe toujours par CourseID
 % ============================================================
 
 
-instructor_ok(task(Course, _, _, _), Time) :-
+instructor_ok(task(Course, _, _, _), Time, Schedule) :-
     instructor(ProfID, _, Course),
-    available(ProfID, Time).
+    available(ProfID, Time),
+    \+ (
+        member(session(OtherTask, _, Time), Schedule),
+        OtherTask = task(OtherCourse, _, _, _),
+        OtherCourse \= Course,
+        instructor(ProfID, _, OtherCourse)
+    ).
 
 % ============================================================
 % CONTRAINTE 6 : Bâtiment affilié à la filière du cours
@@ -150,7 +157,7 @@ all_constraints_ok(Task, Room, Time, Schedule) :-
     building_ok(Task, Room),           % lookup pur, élimine par filière
     equipment_ok(Task, Room),          % lookup pur, élimine par équipement
     capacity_ok(Task, Room),           % lookup pur, élimine par taille
-    instructor_ok(Task, Time),         % lookup pur, élimine par dispo
+    instructor_ok(Task, Time, Schedule), % parcours Schedule pour conflit prof
     room_free(Room, Time, Schedule),   % parcours Schedule
     group_free(Task, Time, Schedule),  % parcours Schedule
     energy_ok(Task, Room, Time, Schedule). % parcours + calcul
@@ -172,9 +179,9 @@ check_violations(Task, Room, Time, Schedule) :-
     ( \+ capacity_ok(Task, Room)
       -> format("  VIOLATION: salle trop petite~n")
       ;  format("  OK: capacité suffisante~n") ),
-    ( \+ instructor_ok(Task, Time)
-      -> format("  VIOLATION: instructeur indisponible~n")
-      ;  format("  OK: instructeur disponible~n") ),
+    ( \+ instructor_ok(Task, Time, Schedule)
+      -> format("  VIOLATION: instructeur indisponible ou enseigne déjà à ce créneau~n")
+      ;  format("  OK: instructeur disponible et sans conflit~n") ),
     ( \+ room_free(Room, Time, Schedule)
       -> format("  VIOLATION: salle déjà occupée~n")
       ;  format("  OK: salle libre~n") ),

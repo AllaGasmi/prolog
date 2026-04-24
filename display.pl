@@ -3,6 +3,7 @@
 % Projet Logic Programming — GL3 2026
 % ============================================================
 :- consult(knowledge_base).
+:- consult(energy).
 :- encoding(utf8).
 % ============================================================
 % Formatage de la cible (Amphi- ou Groupe-)
@@ -13,14 +14,21 @@ format_target(groupe, GroupID, Label) :-
     atomic_list_concat(['Groupe-', GroupID], Label).
 
 % ============================================================
+% Récupérer le nom du professeur
+% ============================================================
+get_instructor_name(Course, ProfName) :-
+    instructor(_, ProfName, Course), !.
+
+% ============================================================
 % AFFICHAGE PAR FILIÈRE (utilisé dans lexport)
 % ============================================================
 print_session_detail(session(Task, Room, _)) :-
     Task = task(Course, SessionIdx, Mode, TargetID),
     room(Room, Cap, Equip, Building, _),
     format_target(Mode, TargetID, TargetLabel),
-    format("      ~w (session ~w) | ~w | Salle ~w [~w, cap:~w, bat:~w]~n",
-           [Course, SessionIdx, TargetLabel, Room, Equip, Cap, Building]).
+    get_instructor_name(Course, ProfName),
+    format("      ~w (session ~w) | ~w | Prof: ~w | Salle ~w [~w, cap:~w, bat:~w]~n",
+           [Course, SessionIdx, TargetLabel, ProfName, Room, Equip, Cap, Building]).
 
 % ============================================================
 % STATISTIQUES
@@ -45,11 +53,12 @@ print_stats(Schedule) :-
     format("Filières couvertes: 6~n", []),
     format("Energie totale    : ~w unités~n", [TotalEnergy]).
 
+
 % ============================================================
 % EXPORT DU PLANNING (Version finale corrigée)
 % ============================================================
 export_schedule(Schedule, Filename) :-
-    atomic_list_concat(['C:/Users/Lenovo/OneDrive/Desktop/prologproj/', Filename], FullPath),
+    atomic_list_concat(['C:/Users/Oumayma/Desktop/Prolog Project/prolog/', Filename], FullPath),
     open(FullPath, write, Stream, [encoding(utf8)]),
 
     format(Stream, "========================================~n", []),
@@ -58,6 +67,8 @@ export_schedule(Schedule, Filename) :-
     format(Stream, "========================================~n~n", []),
 
     print_stats_to_stream(Schedule, Stream),
+    
+    print_energy_to_stream(Schedule, Stream),
 
     format(Stream, "~n========================================~n", []),
     format(Stream, "         PLANNING DÉTAILLÉ PAR FILIÈRE~n", []),
@@ -85,6 +96,30 @@ print_stats_to_stream(Schedule, Stream) :-
     format(Stream, "========================================~n~n", []).
 
 
+% ============================================================
+% EXPORT RAPPORT ÉNERGÉTIQUE
+% ============================================================
+print_energy_to_stream(Schedule, Stream) :-
+    energy_total_campus(Schedule, ETotal),
+    format(Stream, "~n=== RAPPORT ÉNERGÉTIQUE ===~n", []),
+    format(Stream, "Consommation totale campus : ~w unités~n", [ETotal]),
+    format(Stream, "~n  Détail par bâtiment :~n", []),
+    forall(building(BID, MaxE), (
+        energy_building_total(BID, Schedule, BTotal),
+        format(Stream, "  Bat. ~w : ~w unités (seuil/jour : ~w)~n",
+               [BID, BTotal, MaxE]),
+        forall(member(Day, [monday, tuesday, wednesday, thursday, friday, saturday]), (
+            energy_building_day(BID, Day, Schedule, DE),
+            ( DE > 0 ->
+                P is round(DE * 100 / MaxE),
+                format(Stream, "    ~w : ~w (~w%)~n", [Day, DE, P])
+            ; true )
+        ))
+    )),
+    energy_imbalance(Schedule, Imbalance),
+    format(Stream, "~nImbalance journalière max : ~w unités~n", [Imbalance]).
+
+
 print_filiere_to_stream(Schedule, FiliereID, FiliereName, Stream) :-
     format(Stream, "~n>>> Filière : ~w (~w) <<<~n", [FiliereName, FiliereID]),
 
@@ -103,9 +138,10 @@ print_session_to_stream(session(Task, Room, Time), Stream) :-
     timeslot(Time, Day, Hour),
     room(Room, Cap, Equip, Building, Cost),
     format_target(Mode, TargetID, TargetLabel),
+    get_instructor_name(Course, ProfName),
 
-    format(Stream, "  ~w ~2f h  |  ~w (session ~w)  |  ~w  |  Salle ~w (~w, bat.~w)  |  Cap: ~w  |  ~w/h~n",
-           [Day, Hour, Course, SessionIdx, TargetLabel, Room, Equip, Building, Cap, Cost]).
+    format(Stream, "  ~w ~2f h  |  ~w (session ~w)  |  ~w  |  Prof: ~w  |  Salle ~w (~w, bat.~w)  |  Cap: ~w  |  ~w/h~n",
+           [Day, Hour, Course, SessionIdx, TargetLabel, ProfName, Room, Equip, Building, Cap, Cost]).
 
 % ============================================================
 % (Optionnel) Affichage console par filière
@@ -124,3 +160,4 @@ print_filiere_schedule(Schedule, FiliereID, FiliereName) :-
     ( All = [] -> format("  (aucune session)~n")
     ; forall(member(S, All), print_session_detail(S))
     ).
+

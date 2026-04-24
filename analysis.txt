@@ -1,0 +1,62 @@
+========================================
+  ANALYSE : Impact des contraintes
+           Ã©nergÃ©tiques
+========================================
+
+QUESTION CENTRALE
+Comment la contrainte Ã©nergÃ©tique rÃ©duit-elle
+l'espace de solutions du problÃ¨me CSP ?
+
+---
+
+1. THÃ‰ORIE : Branching et Pruning
+
+   Un problÃ¨me CSP sans contrainte Ã©nergÃ©tique
+   explore un espace exponentiel de solutions possibles
+   (nombre de salles ^ nombre de tÃ¢ches).
+
+   AVEC contrainte Ã©nergÃ©tique :
+   - Avant chaque assignation, on teste energy_ok/4
+   - Si MAX_bÃ¢timent dÃ©passÃ© ce jour â†’ rejeter la branche
+   - Ã‰lagage (pruning) : l'espace est fortement rÃ©duit
+
+2. EFFET CUMULATIF DYNAMIQUE
+
+   Premier groupe assignÃ© matin (b1, lundi, coÃ»t 100)
+     -> Ã‰nergie(b1, lundi) = 100
+
+   DeuxiÃ¨me groupe le mÃªme matin (b1, lundi, coÃ»t 80)
+     -> Test : 100 + 80 = 180 > MAX(b1)=150 ? REJETER
+     -> Chercher autre salle (b2, b3 ou b4) ou autre jour
+
+   TroisiÃ¨me groupe aussi matin (b1, lundi, coÃ»t 70)
+     -> Impossible car b1 lundi dÃ©jÃ  saturÃ©
+     -> OPTIONS RÃ‰DUITES pour ce groupe
+
+3. RÃ‰SULTAT OBSERVÃ‰ DANS LE PLANNING
+
+   Ã‰nergie totale campus : 2312 unitÃ©s
+
+   BÃ¢timent b1 : 766 unitÃ©s/semaine (seuil : 150/jour)
+       âš ï¸  tuesday : 148 unitÃ©s (99%) CRITIQUE
+       âš ï¸  wednesday : 147 unitÃ©s (98%) CRITIQUE
+       âš ï¸  thursday : 142 unitÃ©s (95%) CRITIQUE
+       âš ï¸  friday : 149 unitÃ©s (99%) CRITIQUE
+   BÃ¢timent b2 : 560 unitÃ©s/semaine (seuil : 130/jour)
+       âš ï¸  thursday : 129 unitÃ©s (99%) CRITIQUE
+   BÃ¢timent b3 : 526 unitÃ©s/semaine (seuil : 90/jour)
+       âš ï¸  monday : 90 unitÃ©s (100%) CRITIQUE
+       âš ï¸  tuesday : 87 unitÃ©s (97%) CRITIQUE
+       âš ï¸  wednesday : 90 unitÃ©s (100%) CRITIQUE
+       âš ï¸  thursday : 90 unitÃ©s (100%) CRITIQUE
+   BÃ¢timent b4 : 460 unitÃ©s/semaine (seuil : 220/jour)
+
+4. CONCLUSION
+
+   La contrainte energy_ok/4 :
+   âœ“ RÃ©duit exponentiellement l'espace de solutions
+   âœ“ Force des dÃ©cisions Â« intelligentes Â»
+   âœ“ ReflÃ¨te une rÃ©alitÃ© : budgets Ã©nergÃ©tiques limitÃ©s
+   âœ“ Rend le problÃ¨me DIFFICILE (NP-complet)
+   âœ“ Mais solvable par backtracking + propagation
+
